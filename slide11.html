@@ -12,15 +12,16 @@
             font-family: 'Noto Sans KR', sans-serif;
         }
         .slide-container {
-            width: 1280px;
-            min-height: 720px;
+            width: 100%;
+            max-width: 1280px;
+            min-height: 100vh;
             margin: 0 auto;
             background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3b82f6 100%);
             position: relative;
             overflow: hidden;
         }
         .main-title {
-            font-size: 2.5rem;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
             font-weight: 900;
             line-height: 1.1;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
@@ -140,7 +141,7 @@
         </div>
 
         <!-- Header Section -->
-        <div class="relative z-10 text-center pt-6 pb-6">
+        <div class="relative z-10 text-center pt-4 sm:pt-5 md:pt-6 pb-4 sm:pb-5 md:pb-6">
             <span class="text-lg font-medium text-yellow-300 mb-2 block">공약 10</span>
             <h1 class="main-title mb-3">
                 미래 세대를 위해 <span class="text-yellow-300">기후 위기</span>에 적극 대응
@@ -151,8 +152,8 @@
         </div>
 
         <!-- Main 3-Step Process -->
-        <div class="relative z-10 px-8 pb-6">
-            <div class="grid grid-cols-3 gap-8 relative">
+        <div class="relative z-10 px-4 sm:px-6 md:px-8 pb-4 sm:pb-5 md:pb-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 relative">
                 
                 <!-- Step 1: 감축목표 설정 -->
                 <div class="step-card relative">
@@ -329,14 +330,14 @@
         </div>
 
         <!-- Bottom Summary -->
-        <div class="relative z-10 px-8 pb-6">
+        <div class="relative z-10 px-4 sm:px-6 md:px-8 pb-4 sm:pb-5 md:pb-6">
             <div class="summary-panel p-6">
                 <div class="text-center mb-4">
                     <h3 class="text-xl font-bold text-yellow-300 mb-2">탄소중립 2050 달성 전략</h3>
                     <p class="text-sm opacity-90">체계적이고 단계적인 기후위기 대응으로 지속가능한 미래 실현</p>
                 </div>
                 
-                <div class="grid grid-cols-4 gap-6 text-center">
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 text-center">
                     <div>
                         <i class="fas fa-water text-2xl text-yellow-300 mb-2"></i>
                         <div class="text-sm font-bold text-yellow-300">4대강 재자연화</div>

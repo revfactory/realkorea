@@ -12,22 +12,23 @@
             font-family: 'Noto Sans KR', sans-serif;
         }
         .slide-container {
-            width: 1280px;
-            min-height: 720px;
+            width: 100%;
+            max-width: 1280px;
+            min-height: 100vh;
             margin: 0 auto;
             background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3b82f6 100%);
             position: relative;
             overflow: hidden;
         }
         .main-title {
-            font-size: 2.2rem;
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
             font-weight: 900;
             line-height: 1.1;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
         .center-hub {
-            width: 200px;
-            height: 200px;
+            width: clamp(120px, 15vw, 200px);
+            height: clamp(120px, 15vw, 200px);
             background: linear-gradient(135deg, #fbbf24, #f59e0b);
             border-radius: 20px;
             display: flex;
@@ -43,7 +44,8 @@
             border: 2px solid rgba(255,255,255,0.3);
             border-radius: 16px;
             transition: all 0.3s ease;
-            height: 60px;
+            height: auto;
+            min-height: 50px;
         }
         .region-item:hover {
             background: rgba(255,255,255,0.18);
@@ -56,7 +58,8 @@
             border: 2px solid rgba(251, 191, 36, 0.4);
             border-radius: 16px;
             transition: all 0.3s ease;
-            height: 60px;
+            height: auto;
+            min-height: 50px;
         }
         .special-item:hover {
             background: rgba(251, 191, 36, 0.25);
@@ -69,7 +72,8 @@
             border: 2px solid rgba(255,255,255,0.2);
             border-radius: 16px;
             transition: all 0.3s ease;
-            height: 140px;
+            height: auto;
+            min-height: 120px;
         }
         .policy-card:hover {
             background: rgba(255,255,255,0.15);
@@ -103,6 +107,32 @@
             0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
             50% { transform: translateY(-6px) rotate(2deg); opacity: 0.6; }
         }
+        
+        @media (max-width: 768px) {
+            .floating-shape {
+                display: none;
+            }
+            .region-item:hover,
+            .special-item:hover {
+                transform: translateX(4px);
+            }
+            .policy-card:hover {
+                transform: translateY(-2px);
+            }
+            .connecting-line {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .region-item:hover,
+            .special-item:hover {
+                transform: translateX(0);
+            }
+            .policy-card:hover {
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body>
@@ -114,26 +144,26 @@
         </div>
 
         <!-- Header Section -->
-        <div class="relative z-10 text-center pt-6 pb-4">
-            <span class="text-base font-medium text-yellow-300 mb-2 block">공약 6</span>
-            <h1 class="main-title mb-3">
+        <div class="relative z-10 text-center pt-4 sm:pt-5 md:pt-6 pb-3 sm:pb-4">
+            <span class="text-sm sm:text-base font-medium text-yellow-300 mb-1 sm:mb-2 block">공약 6</span>
+            <h1 class="main-title mb-2 sm:mb-3 px-4">
                 <span class="text-yellow-300">세종 행정수도</span>와 <span class="text-yellow-300">5극 3특</span> 추진
             </h1>
-            <p class="text-base opacity-90">
+            <p class="text-xs sm:text-sm md:text-base opacity-90 px-4">
                 국토 균형발전 실현을 위한 <span class="text-yellow-300 font-bold">지방분권과 자치강화</span>
             </p>
         </div>
 
         <!-- Main Symmetric Layout -->
-        <div class="relative z-10 px-8 py-4">
-            <div class="grid grid-cols-12 gap-6 items-center" style="height: 390px;">
+        <div class="relative z-10 px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-3 sm:gap-4 md:gap-6 items-start md:items-center">
                 <!-- Left Side: 5극 (5대 초광역권) -->
-                <div class="col-span-4">
-                    <h2 class="text-lg font-bold text-yellow-300 text-center mb-4">5대 초광역권</h2>
-                    <div class="space-y-3">
+                <div class="col-span-1 md:col-span-4">
+                    <h2 class="text-base sm:text-lg font-bold text-yellow-300 text-center mb-3 sm:mb-4">5대 초광역권</h2>
+                    <div class="space-y-2 sm:space-y-3">
                         <!-- 수도권 -->
-                        <div class="region-item p-3 flex items-center">
-                            <i class="fas fa-city text-lg text-yellow-300 mr-3"></i>
+                        <div class="region-item p-2 sm:p-3 flex items-center">
+                            <i class="fas fa-city text-base sm:text-lg text-yellow-300 mr-2 sm:mr-3"></i>
                             <div>
                                 <h3 class="text-sm font-bold">수도권</h3>
                                 <p class="text-xs opacity-80">서울·경기·인천</p>
@@ -141,8 +171,8 @@
                         </div>
                         
                         <!-- 동남권 -->
-                        <div class="region-item p-3 flex items-center">
-                            <i class="fas fa-ship text-lg text-yellow-300 mr-3"></i>
+                        <div class="region-item p-2 sm:p-3 flex items-center">
+                            <i class="fas fa-ship text-base sm:text-lg text-yellow-300 mr-2 sm:mr-3"></i>
                             <div>
                                 <h3 class="text-sm font-bold">동남권</h3>
                                 <p class="text-xs opacity-80">부산·울산·경남</p>
@@ -150,8 +180,8 @@
                         </div>
                         
                         <!-- 대경권 -->
-                        <div class="region-item p-3 flex items-center">
-                            <i class="fas fa-industry text-lg text-yellow-300 mr-3"></i>
+                        <div class="region-item p-2 sm:p-3 flex items-center">
+                            <i class="fas fa-industry text-base sm:text-lg text-yellow-300 mr-2 sm:mr-3"></i>
                             <div>
                                 <h3 class="text-sm font-bold">대경권</h3>
                                 <p class="text-xs opacity-80">대구·경북</p>
@@ -159,8 +189,8 @@
                         </div>
                         
                         <!-- 중부권 -->
-                        <div class="region-item p-3 flex items-center">
-                            <i class="fas fa-mountain text-lg text-yellow-300 mr-3"></i>
+                        <div class="region-item p-2 sm:p-3 flex items-center">
+                            <i class="fas fa-mountain text-base sm:text-lg text-yellow-300 mr-2 sm:mr-3"></i>
                             <div>
                                 <h3 class="text-sm font-bold">중부권</h3>
                                 <p class="text-xs opacity-80">대전·세종·충남북</p>
@@ -168,8 +198,8 @@
                         </div>
                         
                         <!-- 호남권 -->
-                        <div class="region-item p-3 flex items-center">
-                            <i class="fas fa-seedling text-lg text-yellow-300 mr-3"></i>
+                        <div class="region-item p-2 sm:p-3 flex items-center">
+                            <i class="fas fa-seedling text-base sm:text-lg text-yellow-300 mr-2 sm:mr-3"></i>
                             <div>
                                 <h3 class="text-sm font-bold">호남권</h3>
                                 <p class="text-xs opacity-80">광주·전남북</p>
@@ -179,27 +209,27 @@
                 </div>
 
                 <!-- Center: 세종 행정수도 -->
-                <div class="col-span-4 relative">
+                <div class="col-span-1 md:col-span-4 relative py-4 md:py-0">
                     <!-- Connecting Lines -->
                     <div class="connecting-line" style="width: 80px; top: 50%; left: -40px;"></div>
                     <div class="connecting-line" style="width: 80px; top: 50%; right: -40px;"></div>
                     
                     <div class="flex justify-center">
                         <div class="center-hub">
-                            <i class="fas fa-landmark text-3xl text-blue-900 mb-2"></i>
-                            <h2 class="text-xl font-bold text-blue-900 text-center leading-tight">세종<br/>행정수도</h2>
-                            <p class="text-sm text-blue-800 font-medium mt-1">완성</p>
+                            <i class="fas fa-landmark text-2xl sm:text-3xl text-blue-900 mb-1 sm:mb-2"></i>
+                            <h2 class="text-base sm:text-lg md:text-xl font-bold text-blue-900 text-center leading-tight">세종<br/>행정수도</h2>
+                            <p class="text-xs sm:text-sm text-blue-800 font-medium mt-1">완성</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Right Side: 3특 (3대 특별자치도) -->
-                <div class="col-span-4">
-                    <h2 class="text-lg font-bold text-yellow-300 text-center mb-4">3대 특별자치도</h2>
-                    <div class="space-y-4">
+                <div class="col-span-1 md:col-span-4">
+                    <h2 class="text-base sm:text-lg font-bold text-yellow-300 text-center mb-3 sm:mb-4">3대 특별자치도</h2>
+                    <div class="space-y-2 sm:space-y-3 md:space-y-4">
                         <!-- 제주특별자치도 -->
-                        <div class="special-item p-4 flex items-center">
-                            <i class="fas fa-umbrella-beach text-lg text-yellow-300 mr-3"></i>
+                        <div class="special-item p-2 sm:p-3 md:p-4 flex items-center">
+                            <i class="fas fa-umbrella-beach text-base sm:text-lg text-yellow-300 mr-2 sm:mr-3"></i>
                             <div>
                                 <h3 class="text-sm font-bold">제주특별자치도</h3>
                                 <p class="text-xs opacity-80">관광·환경 중심</p>
@@ -207,8 +237,8 @@
                         </div>
                         
                         <!-- 강원특별자치도 -->
-                        <div class="special-item p-4 flex items-center">
-                            <i class="fas fa-skiing text-lg text-yellow-300 mr-3"></i>
+                        <div class="special-item p-2 sm:p-3 md:p-4 flex items-center">
+                            <i class="fas fa-skiing text-base sm:text-lg text-yellow-300 mr-2 sm:mr-3"></i>
                             <div>
                                 <h3 class="text-sm font-bold">강원특별자치도</h3>
                                 <p class="text-xs opacity-80">평화·관광 중심</p>
@@ -216,8 +246,8 @@
                         </div>
                         
                         <!-- 전북특별자치도 -->
-                        <div class="special-item p-4 flex items-center">
-                            <i class="fas fa-tractor text-lg text-yellow-300 mr-3"></i>
+                        <div class="special-item p-2 sm:p-3 md:p-4 flex items-center">
+                            <i class="fas fa-tractor text-base sm:text-lg text-yellow-300 mr-2 sm:mr-3"></i>
                             <div>
                                 <h3 class="text-sm font-bold">전북특별자치도</h3>
                                 <p class="text-xs opacity-80">농업·새만금 중심</p>
@@ -229,12 +259,12 @@
         </div>
 
         <!-- Bottom Policy Cards -->
-        <div class="relative z-10 px-8 pb-6">
-            <div class="grid grid-cols-4 gap-4">
+        <div class="relative z-10 px-4 sm:px-6 md:px-8 pb-4 sm:pb-5 md:pb-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4">
                 <!-- 세종 행정수도 완성 -->
-                <div class="policy-card p-4 text-center flex flex-col justify-center">
-                    <i class="fas fa-building text-2xl text-yellow-300 mb-2"></i>
-                    <h3 class="font-bold text-sm mb-2">세종 행정수도</h3>
+                <div class="policy-card p-3 sm:p-4 text-center flex flex-col justify-center">
+                    <i class="fas fa-building text-xl sm:text-2xl text-yellow-300 mb-1 sm:mb-2"></i>
+                    <h3 class="font-bold text-xs sm:text-sm mb-1 sm:mb-2">세종 행정수도</h3>
                     <ul class="text-xs space-y-1 opacity-90">
                         <li>• 국회 세종의사당 건립</li>
                         <li>• 대통령 세종집무실</li>
@@ -243,9 +273,9 @@
                 </div>
 
                 <!-- 자치분권 강화 -->
-                <div class="policy-card p-4 text-center flex flex-col justify-center">
-                    <i class="fas fa-handshake text-2xl text-yellow-300 mb-2"></i>
-                    <h3 class="font-bold text-sm mb-2">자치분권 강화</h3>
+                <div class="policy-card p-3 sm:p-4 text-center flex flex-col justify-center">
+                    <i class="fas fa-handshake text-xl sm:text-2xl text-yellow-300 mb-1 sm:mb-2"></i>
+                    <h3 class="font-bold text-xs sm:text-sm mb-1 sm:mb-2">자치분권 강화</h3>
                     <ul class="text-xs space-y-1 opacity-90">
                         <li>• 국가자치분권회의 신설</li>
                         <li>• 지방교부세 확대</li>
@@ -254,9 +284,9 @@
                 </div>
 
                 <!-- 지역경제 활성화 -->
-                <div class="policy-card p-4 text-center flex flex-col justify-center">
-                    <i class="fas fa-chart-line text-2xl text-yellow-300 mb-2"></i>
-                    <h3 class="font-bold text-sm mb-2">지역경제 활성화</h3>
+                <div class="policy-card p-3 sm:p-4 text-center flex flex-col justify-center">
+                    <i class="fas fa-chart-line text-xl sm:text-2xl text-yellow-300 mb-1 sm:mb-2"></i>
+                    <h3 class="font-bold text-xs sm:text-sm mb-1 sm:mb-2">지역경제 활성화</h3>
                     <ul class="text-xs space-y-1 opacity-90">
                         <li>• 지역 대표 전략산업</li>
                         <li>• 지역사랑 상품권</li>
@@ -265,9 +295,9 @@
                 </div>
 
                 <!-- 대학 서열화 완화 -->
-                <div class="policy-card p-4 text-center flex flex-col justify-center">
-                    <i class="fas fa-graduation-cap text-2xl text-yellow-300 mb-2"></i>
-                    <h3 class="font-bold text-sm mb-2">대학 서열화 완화</h3>
+                <div class="policy-card p-3 sm:p-4 text-center flex flex-col justify-center">
+                    <i class="fas fa-graduation-cap text-xl sm:text-2xl text-yellow-300 mb-1 sm:mb-2"></i>
+                    <h3 class="font-bold text-xs sm:text-sm mb-1 sm:mb-2">대학 서열화 완화</h3>
                     <ul class="text-xs space-y-1 opacity-90">
                         <li>• '서울대 10개 만들기'</li>
                         <li>• 지역 거점 국립대 투자</li>

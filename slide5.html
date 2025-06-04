@@ -12,15 +12,16 @@
             font-family: 'Noto Sans KR', sans-serif;
         }
         .slide-container {
-            width: 1280px;
-            min-height: 720px;
+            width: 100%;
+            max-width: 1280px;
+            min-height: 100vh;
             margin: 0 auto;
             background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3b82f6 100%);
             position: relative;
             overflow: hidden;
         }
         .main-title {
-            font-size: 2.5rem;
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
             font-weight: 900;
             line-height: 1.1;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
@@ -31,7 +32,8 @@
             border: 2px solid rgba(255,255,255,0.2);
             border-radius: 18px;
             transition: all 0.3s ease;
-            height: 500px;
+            height: auto;
+            min-height: 400px;
         }
         .column-card:hover {
             background: rgba(255,255,255,0.15);
@@ -79,6 +81,33 @@
             25% { transform: translateY(-12px) translateX(8px) rotate(3deg); }
             75% { transform: translateY(8px) translateX(-6px) rotate(-2deg); }
         }
+        
+        @media (max-width: 768px) {
+            .icon-header {
+                width: 36px;
+                height: 36px;
+            }
+            .floating-element {
+                display: none;
+            }
+            .column-card {
+                min-height: auto;
+            }
+            .column-card:hover {
+                transform: translateY(-2px);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .icon-header {
+                width: 32px;
+                height: 32px;
+                margin-bottom: 4px;
+            }
+            .column-card:hover {
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body>
@@ -91,33 +120,33 @@
         </div>
 
         <!-- Main Content -->
-        <div class="relative z-10 h-full flex flex-col px-10 py-4">
+        <div class="relative z-10 h-full flex flex-col px-4 sm:px-6 md:px-10 py-3 sm:py-4">
             <!-- Header Section -->
-            <div class="text-center mb-4">
-                <span class="text-lg font-medium text-yellow-300 mb-2 block">공약 4</span>
-                <h1 class="main-title mb-3">
+            <div class="text-center mb-3 sm:mb-4">
+                <span class="text-base sm:text-lg font-medium text-yellow-300 mb-1 sm:mb-2 block">공약 4</span>
+                <h1 class="main-title mb-2 sm:mb-3">
                     <span class="text-yellow-300">외교 안보</span> 강국 건설
                 </h1>
-                <p class="text-lg opacity-90">
+                <p class="text-sm sm:text-base md:text-lg opacity-90">
                     튼튼한 경제안보 구축과 지속가능한 <span class="text-yellow-300 font-bold">한반도 평화</span> 실현
                 </p>
             </div>
 
             <!-- Three Column Layout -->
-            <div class="flex-1 grid grid-cols-3 gap-4">
+            <div class="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 md:gap-4">
                 <!-- Column 1: 경제외교 & 국제협력 -->
-                <div class="column-card p-3 flex flex-col">
+                <div class="column-card p-2.5 sm:p-3 flex flex-col">
                     <div class="text-center mb-2">
                         <div class="icon-header">
                             <i class="fas fa-globe-americas text-base text-blue-900"></i>
                         </div>
-                        <h2 class="text-base font-bold text-yellow-300 mb-1">경제외교 & 국제협력</h2>
+                        <h2 class="text-sm sm:text-base font-bold text-yellow-300 mb-1">경제외교 & 국제협력</h2>
                         <p class="text-xs opacity-80">글로벌 경제외교 강화</p>
                     </div>
 
-                    <div class="space-y-1.5 flex-1">
+                    <div class="space-y-1 sm:space-y-1.5 flex-1">
                         <!-- 경제외교 강화 -->
-                        <div class="policy-item p-2">
+                        <div class="policy-item p-1.5 sm:p-2">
                             <div class="flex items-center mb-1">
                                 <i class="fas fa-handshake text-yellow-300 mr-2 text-xs"></i>
                                 <h3 class="font-bold text-xs">경제외교 강화</h3>
@@ -131,7 +160,7 @@
                         </div>
 
                         <!-- 외교영역 확대 -->
-                        <div class="policy-item p-2">
+                        <div class="policy-item p-1.5 sm:p-2">
                             <div class="flex items-center mb-1">
                                 <i class="fas fa-expand-arrows-alt text-yellow-300 mr-2 text-xs"></i>
                                 <h3 class="font-bold text-xs">외교영역 확대</h3>
@@ -145,7 +174,7 @@
                         </div>
 
                         <!-- 무역구조 혁신 -->
-                        <div class="policy-item p-2">
+                        <div class="policy-item p-1.5 sm:p-2">
                             <div class="flex items-center mb-1">
                                 <i class="fas fa-exchange-alt text-yellow-300 mr-2 text-xs"></i>
                                 <h3 class="font-bold text-xs">무역구조 혁신</h3>
@@ -161,18 +190,18 @@
                 </div>
 
                 <!-- Column 2: 한반도 평화 & 한미동맹 -->
-                <div class="column-card p-3 flex flex-col">
+                <div class="column-card p-2.5 sm:p-3 flex flex-col">
                     <div class="text-center mb-2">
                         <div class="icon-header">
                             <i class="fas fa-dove text-base text-blue-900"></i>
                         </div>
-                        <h2 class="text-base font-bold text-yellow-300 mb-1">한반도 평화 & 동맹</h2>
+                        <h2 class="text-sm sm:text-base font-bold text-yellow-300 mb-1">한반도 평화 & 동맹</h2>
                         <p class="text-xs opacity-80">평화통일과 안보협력</p>
                     </div>
 
-                    <div class="space-y-1.5 flex-1">
+                    <div class="space-y-1 sm:space-y-1.5 flex-1">
                         <!-- 한반도 비핵화 -->
-                        <div class="policy-item p-2">
+                        <div class="policy-item p-1.5 sm:p-2">
                             <div class="flex items-center mb-1">
                                 <i class="fas fa-peace text-yellow-300 mr-2 text-xs"></i>
                                 <h3 class="font-bold text-xs">한반도 비핵화</h3>
@@ -186,7 +215,7 @@
                         </div>
 
                         <!-- 굳건한 한미동맹 -->
-                        <div class="policy-item p-2">
+                        <div class="policy-item p-1.5 sm:p-2">
                             <div class="flex items-center mb-1">
                                 <i class="fas fa-flag-usa text-yellow-300 mr-2 text-xs"></i>
                                 <h3 class="font-bold text-xs">굳건한 한미동맹</h3>
@@ -200,7 +229,7 @@
                         </div>
 
                         <!-- 남북관계 복원 -->
-                        <div class="policy-item p-2">
+                        <div class="policy-item p-1.5 sm:p-2">
                             <div class="flex items-center mb-1">
                                 <i class="fas fa-hands-helping text-yellow-300 mr-2 text-xs"></i>
                                 <h3 class="font-bold text-xs">남북관계 복원</h3>
@@ -216,18 +245,18 @@
                 </div>
 
                 <!-- Column 3: 경제안보 & 해양안보 -->
-                <div class="column-card p-3 flex flex-col">
+                <div class="column-card p-2.5 sm:p-3 flex flex-col">
                     <div class="text-center mb-2">
                         <div class="icon-header">
                             <i class="fas fa-shield-alt text-base text-blue-900"></i>
                         </div>
-                        <h2 class="text-base font-bold text-yellow-300 mb-1">경제안보 & 해양안보</h2>
+                        <h2 class="text-sm sm:text-base font-bold text-yellow-300 mb-1">경제안보 & 해양안보</h2>
                         <p class="text-xs opacity-80">안보기반 경제발전</p>
                     </div>
 
-                    <div class="space-y-1.5 flex-1">
+                    <div class="space-y-1 sm:space-y-1.5 flex-1">
                         <!-- 경제안보 강화 -->
-                        <div class="policy-item p-2">
+                        <div class="policy-item p-1.5 sm:p-2">
                             <div class="flex items-center mb-1">
                                 <i class="fas fa-industry text-yellow-300 mr-2 text-xs"></i>
                                 <h3 class="font-bold text-xs">경제안보 강화</h3>
@@ -241,7 +270,7 @@
                         </div>
 
                         <!-- 물류·식량안보 -->
-                        <div class="policy-item p-2">
+                        <div class="policy-item p-1.5 sm:p-2">
                             <div class="flex items-center mb-1">
                                 <i class="fas fa-ship text-yellow-300 mr-2 text-xs"></i>
                                 <h3 class="font-bold text-xs">물류·식량안보</h3>
@@ -255,7 +284,7 @@
                         </div>
 
                         <!-- 해양안보 -->
-                        <div class="policy-item p-2">
+                        <div class="policy-item p-1.5 sm:p-2">
                             <div class="flex items-center mb-1">
                                 <i class="fas fa-anchor text-yellow-300 mr-2 text-xs"></i>
                                 <h3 class="font-bold text-xs">해양안보</h3>
@@ -272,8 +301,8 @@
             </div>
 
             <!-- Bottom Summary -->
-            <div class="mt-2 text-center bg-white bg-opacity-10 rounded-xl px-6 py-2 backdrop-blur-sm">
-                <p class="text-base font-medium">
+            <div class="mt-2 text-center bg-white bg-opacity-10 rounded-lg sm:rounded-xl px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 backdrop-blur-sm">
+                <p class="text-xs sm:text-sm md:text-base font-medium">
                     <span class="text-yellow-300 font-bold">실용적 외교</span>와 <span class="text-yellow-300 font-bold">경제안보</span>로 세계 질서 변화에 능동 대처
                 </p>
             </div>

@@ -12,15 +12,16 @@
             font-family: 'Noto Sans KR', sans-serif;
         }
         .slide-container {
-            width: 1280px;
-            min-height: 720px;
+            width: 100%;
+            max-width: 1280px;
+            min-height: 100vh;
             margin: 0 auto;
             background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3b82f6 100%);
             position: relative;
             overflow: hidden;
         }
         .main-title {
-            font-size: 2rem;
+            font-size: clamp(1.25rem, 3vw, 2rem);
             font-weight: 900;
             line-height: 1.1;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
@@ -31,7 +32,8 @@
             border: 2px solid rgba(255,255,255,0.2);
             border-radius: 24px;
             transition: all 0.3s ease;
-            height: 555px;
+            height: auto;
+            min-height: 400px;
         }
         .grid-card:hover {
             background: rgba(255,255,255,0.15);
@@ -85,6 +87,36 @@
             0%, 100% { opacity: 0.3; transform: translateY(0px) rotate(0deg); }
             50% { opacity: 0.6; transform: translateY(-15px) rotate(3deg); }
         }
+        
+        @media (max-width: 768px) {
+            .icon-wrapper {
+                width: 48px;
+                height: 48px;
+            }
+            .floating-shape {
+                display: none;
+            }
+            .grid-card:hover {
+                transform: translateY(-4px);
+            }
+            .policy-item:hover {
+                transform: translateX(1px);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .icon-wrapper {
+                width: 40px;
+                height: 40px;
+                margin-bottom: 8px;
+            }
+            .grid-card:hover {
+                transform: translateY(0);
+            }
+            .policy-item:hover {
+                transform: translateX(0);
+            }
+        }
     </style>
 </head>
 <body>
@@ -97,34 +129,34 @@
         </div>
 
         <!-- Main Content -->
-        <div class="relative z-10 h-full flex flex-col px-8 py-4">
+        <div class="relative z-10 h-full flex flex-col px-4 sm:px-6 md:px-8 py-3 sm:py-4">
             <!-- Header Section -->
-            <div class="header-section px-6 py-3 mb-4">
+            <div class="header-section px-4 sm:px-5 md:px-6 py-2 sm:py-3 mb-3 sm:mb-4">
                 <div class="text-center">
-                    <span class="text-sm font-medium text-yellow-300 mb-1 block">공약 7</span>
-                    <h1 class="main-title mb-2">
+                    <span class="text-xs sm:text-sm font-medium text-yellow-300 mb-1 block">공약 7</span>
+                    <h1 class="main-title mb-1 sm:mb-2 px-2">
                         <span class="text-yellow-300">노동이 존중</span>받고 모든 사람의 <span class="text-yellow-300">권리가 보장</span>되는 사회
                     </h1>
-                    <p class="text-sm opacity-90">
+                    <p class="text-xs sm:text-sm opacity-90">
                         노동 존중, 일하는 사람들의 <span class="text-yellow-300 font-bold">권리 존중 사회</span> 실현
                     </p>
                 </div>
             </div>
 
             <!-- 4-Grid Layout -->
-            <div class="flex-1 grid grid-cols-4 gap-4">
+            <div class="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4">
                 <!-- Card 1: 노동권 보장 -->
-                <div class="grid-card p-4">
+                <div class="grid-card p-3 sm:p-4">
                     <div class="text-center mb-3">
                         <div class="icon-wrapper">
                             <i class="fas fa-fist-raised text-xl text-blue-900"></i>
                         </div>
-                        <h2 class="text-lg font-bold text-yellow-300 mb-1">노동권 보장</h2>
+                        <h2 class="text-base sm:text-lg font-bold text-yellow-300 mb-1">노동권 보장</h2>
                         <p class="text-xs opacity-80">일하는 모든 사람의 권리</p>
                     </div>
 
-                    <div class="space-y-2">
-                        <div class="policy-item p-2">
+                    <div class="space-y-1.5 sm:space-y-2">
+                        <div class="policy-item p-1.5 sm:p-2">
                             <h3 class="font-bold text-xs text-yellow-300 mb-1">권리 보장 확대</h3>
                             <ul class="text-xs space-y-0.5 opacity-90">
                                 <li>• 자영업자·특수고용 권리</li>
@@ -133,7 +165,7 @@
                             </ul>
                         </div>
 
-                        <div class="policy-item p-2">
+                        <div class="policy-item p-1.5 sm:p-2">
                             <h3 class="font-bold text-xs text-yellow-300 mb-1">교섭권 강화</h3>
                             <ul class="text-xs space-y-0.5 opacity-90">
                                 <li>• 노동조합법 2·3조 개정</li>
@@ -142,7 +174,7 @@
                             </ul>
                         </div>
 
-                        <div class="policy-item p-2">
+                        <div class="policy-item p-1.5 sm:p-2">
                             <h3 class="font-bold text-xs text-yellow-300 mb-1">임금제도 개선</h3>
                             <ul class="text-xs space-y-0.5 opacity-90">
                                 <li>• 포괄임금제 금지</li>
@@ -151,7 +183,7 @@
                             </ul>
                         </div>
 
-                        <div class="policy-item p-2">
+                        <div class="policy-item p-1.5 sm:p-2">
                             <h3 class="font-bold text-xs text-yellow-300 mb-1">직장 민주주의</h3>
                             <ul class="text-xs space-y-0.5 opacity-90">
                                 <li>• 근로자 대표 제도화</li>
@@ -163,17 +195,17 @@
                 </div>
 
                 <!-- Card 2: 노동 안전·건강 -->
-                <div class="grid-card p-4">
+                <div class="grid-card p-3 sm:p-4">
                     <div class="text-center mb-3">
                         <div class="icon-wrapper">
                             <i class="fas fa-hard-hat text-xl text-blue-900"></i>
                         </div>
-                        <h2 class="text-lg font-bold text-yellow-300 mb-1">안전·건강</h2>
+                        <h2 class="text-base sm:text-lg font-bold text-yellow-300 mb-1">안전·건강</h2>
                         <p class="text-xs opacity-80">안전한 일터 환경 조성</p>
                     </div>
 
-                    <div class="space-y-2">
-                        <div class="policy-item p-2">
+                    <div class="space-y-1.5 sm:space-y-2">
+                        <div class="policy-item p-1.5 sm:p-2">
                             <h3 class="font-bold text-xs text-yellow-300 mb-1">산재보험 확대</h3>
                             <ul class="text-xs space-y-0.5 opacity-90">
                                 <li>• 자영업자 산재보험</li>
@@ -182,7 +214,7 @@
                             </ul>
                         </div>
 
-                        <div class="policy-item p-2">
+                        <div class="policy-item p-1.5 sm:p-2">
                             <h3 class="font-bold text-xs text-yellow-300 mb-1">안전보건 체계</h3>
                             <ul class="text-xs space-y-0.5 opacity-90">
                                 <li>• 원·하청 통합관리</li>
@@ -191,7 +223,7 @@
                             </ul>
                         </div>
 
-                        <div class="policy-item p-2">
+                        <div class="policy-item p-1.5 sm:p-2">
                             <h3 class="font-bold text-xs text-yellow-300 mb-1">노동시간 감축</h3>
                             <ul class="text-xs space-y-0.5 opacity-90">
                                 <li>• 주 4.5일제 도입</li>
@@ -200,7 +232,7 @@
                             </ul>
                         </div>
 
-                        <div class="policy-item p-2">
+                        <div class="policy-item p-1.5 sm:p-2">
                             <h3 class="font-bold text-xs text-yellow-300 mb-1">건강권 보장</h3>
                             <ul class="text-xs space-y-0.5 opacity-90">
                                 <li>• 일하다 다치지 않게</li>
@@ -212,17 +244,17 @@
                 </div>
 
                 <!-- Card 3: 평등·다양성 -->
-                <div class="grid-card p-4">
+                <div class="grid-card p-3 sm:p-4">
                     <div class="text-center mb-3">
                         <div class="icon-wrapper">
                             <i class="fas fa-users text-xl text-blue-900"></i>
                         </div>
-                        <h2 class="text-lg font-bold text-yellow-300 mb-1">평등·다양성</h2>
+                        <h2 class="text-base sm:text-lg font-bold text-yellow-300 mb-1">평등·다양성</h2>
                         <p class="text-xs opacity-80">모든 노동자의 권리 실현</p>
                     </div>
 
-                    <div class="space-y-2">
-                        <div class="policy-item p-2">
+                    <div class="space-y-1.5 sm:space-y-2">
+                        <div class="policy-item p-1.5 sm:p-2">
                             <h3 class="font-bold text-xs text-yellow-300 mb-1">여성 일자리</h3>
                             <ul class="text-xs space-y-0.5 opacity-90">
                                 <li>• 고용평등 임금공시제</li>
@@ -231,7 +263,7 @@
                             </ul>
                         </div>
 
-                        <div class="policy-item p-2">
+                        <div class="policy-item p-1.5 sm:p-2">
                             <h3 class="font-bold text-xs text-yellow-300 mb-1">장애인 참여</h3>
                             <ul class="text-xs space-y-0.5 opacity-90">
                                 <li>• 장애인 권리보장법</li>
@@ -240,7 +272,7 @@
                             </ul>
                         </div>
 
-                        <div class="policy-item p-2">
+                        <div class="policy-item p-1.5 sm:p-2">
                             <h3 class="font-bold text-xs text-yellow-300 mb-1">문화예술인</h3>
                             <ul class="text-xs space-y-0.5 opacity-90">
                                 <li>• 창작권 보장</li>
@@ -249,7 +281,7 @@
                             </ul>
                         </div>
 
-                        <div class="policy-item p-2">
+                        <div class="policy-item p-1.5 sm:p-2">
                             <h3 class="font-bold text-xs text-yellow-300 mb-1">다양성 존중</h3>
                             <ul class="text-xs space-y-0.5 opacity-90">
                                 <li>• 차별금지 강화</li>
@@ -261,17 +293,17 @@
                 </div>
 
                 <!-- Card 4: 처우개선·제도개혁 -->
-                <div class="grid-card p-4">
+                <div class="grid-card p-3 sm:p-4">
                     <div class="text-center mb-3">
                         <div class="icon-wrapper">
                             <i class="fas fa-gavel text-xl text-blue-900"></i>
                         </div>
-                        <h2 class="text-lg font-bold text-yellow-300 mb-1">처우개선</h2>
+                        <h2 class="text-base sm:text-lg font-bold text-yellow-300 mb-1">처우개선</h2>
                         <p class="text-xs opacity-80">공정한 노동환경 구축</p>
                     </div>
 
-                    <div class="space-y-2">
-                        <div class="policy-item p-2">
+                    <div class="space-y-1.5 sm:space-y-2">
+                        <div class="policy-item p-1.5 sm:p-2">
                             <h3 class="font-bold text-xs text-yellow-300 mb-1">공무원 처우</h3>
                             <ul class="text-xs space-y-0.5 opacity-90">
                                 <li>• 저연차 공무원 보수인상</li>
@@ -280,7 +312,7 @@
                             </ul>
                         </div>
 
-                        <div class="policy-item p-2">
+                        <div class="policy-item p-1.5 sm:p-2">
                             <h3 class="font-bold text-xs text-yellow-300 mb-1">모범사용자</h3>
                             <ul class="text-xs space-y-0.5 opacity-90">
                                 <li>• 공공부문 선도</li>
@@ -289,7 +321,7 @@
                             </ul>
                         </div>
 
-                        <div class="policy-item p-2">
+                        <div class="policy-item p-1.5 sm:p-2">
                             <h3 class="font-bold text-xs text-yellow-300 mb-1">제도 개선</h3>
                             <ul class="text-xs space-y-0.5 opacity-90">
                                 <li>• 근로기준법 강화</li>
@@ -298,7 +330,7 @@
                             </ul>
                         </div>
 
-                        <div class="policy-item p-2">
+                        <div class="policy-item p-1.5 sm:p-2">
                             <h3 class="font-bold text-xs text-yellow-300 mb-1">상생협력</h3>
                             <ul class="text-xs space-y-0.5 opacity-90">
                                 <li>• 노사정 대화</li>
@@ -311,22 +343,22 @@
             </div>
 
             <!-- Bottom Summary -->
-            <div class="text-center mt-3 pt-2 border-t border-yellow-300 border-opacity-30">
-                <div class="flex items-center justify-center space-x-6">
+            <div class="text-center mt-2 sm:mt-3 pt-1.5 sm:pt-2 border-t border-yellow-300 border-opacity-30">
+                <div class="flex items-center justify-center space-x-3 sm:space-x-4 md:space-x-6 flex-wrap gap-y-2">
                     <div class="text-center">
-                        <div class="text-sm font-bold text-yellow-300">노동존중</div>
+                        <div class="text-xs sm:text-sm font-bold text-yellow-300">노동존중</div>
                         <div class="text-xs opacity-90">모든 일하는 사람의 권리</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-sm font-bold text-yellow-300">안전보장</div>
+                        <div class="text-xs sm:text-sm font-bold text-yellow-300">안전보장</div>
                         <div class="text-xs opacity-90">안전하고 건강한 일터</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-sm font-bold text-yellow-300">평등실현</div>
+                        <div class="text-xs sm:text-sm font-bold text-yellow-300">평등실현</div>
                         <div class="text-xs opacity-90">차별 없는 노동환경</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-sm font-bold text-yellow-300">상생협력</div>
+                        <div class="text-xs sm:text-sm font-bold text-yellow-300">상생협력</div>
                         <div class="text-xs opacity-90">공정한 노사관계</div>
                     </div>
                 </div>

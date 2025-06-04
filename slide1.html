@@ -10,28 +10,31 @@
     <style>
         body {
             font-family: 'Noto Sans KR', sans-serif;
+            margin: 0;
+            padding: 0;
         }
         .slide-container {
-            width: 1280px;
-            min-height: 720px;
+            width: 100%;
+            max-width: 1280px;
+            min-height: 100vh;
             margin: 0 auto;
             background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3b82f6 100%);
             position: relative;
             overflow: hidden;
         }
         .main-title {
-            font-size: 3.5rem;
+            font-size: clamp(2rem, 5vw, 3.5rem);
             font-weight: 900;
             line-height: 1.1;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
         .subtitle {
-            font-size: 1.5rem;
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
             font-weight: 400;
             opacity: 0.9;
         }
         .vision-text {
-            font-size: 1.75rem;
+            font-size: clamp(1.125rem, 2.5vw, 1.75rem);
             font-weight: 500;
             line-height: 1.4;
         }
@@ -62,6 +65,22 @@
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-20px); }
         }
+        
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .slide-container {
+                min-height: 100vh;
+            }
+            .circle-1 { width: 80px; height: 80px; }
+            .circle-2 { width: 60px; height: 60px; }
+            .circle-3 { width: 40px; height: 40px; }
+        }
+        
+        @media (max-width: 480px) {
+            .floating-elements {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -74,11 +93,11 @@
         </div>
 
         <!-- Main Content -->
-        <div class="relative z-10 px-16 py-12 h-full flex flex-col">
+        <div class="relative z-10 px-4 sm:px-8 md:px-16 py-6 sm:py-8 md:py-12 h-full flex flex-col">
             <!-- Header Section -->
-            <div class="text-center mb-12">
+            <div class="text-center mb-6 sm:mb-8 md:mb-12">
                 <div class="mb-4">
-                    <i class="fas fa-flag-checkered text-6xl text-yellow-300 mb-4"></i>
+                    <i class="fas fa-flag-checkered text-4xl sm:text-5xl md:text-6xl text-yellow-300 mb-4"></i>
                 </div>
                 <h1 class="main-title mb-6">
                     이재명 제21대 대통령선거<br>
@@ -90,7 +109,7 @@
             </div>
 
             <!-- Vision Statement -->
-            <div class="text-center mb-12 bg-white bg-opacity-10 rounded-2xl p-8 backdrop-blur-sm">
+            <div class="text-center mb-6 sm:mb-8 md:mb-12 bg-white bg-opacity-10 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 backdrop-blur-sm">
                 <p class="vision-text">
                     "경제 성장부터 민주주의 회복, 생활 안정, 기후위기 대응까지<br>
                     <span class="text-yellow-300 font-bold">모든 국민의 삶과 밀접한 연관이 있는 정책</span>"
@@ -98,71 +117,71 @@
             </div>
 
             <!-- 10 Categories Grid -->
-            <div class="grid grid-cols-5 gap-4 flex-grow">
-                <div class="category-item bg-white bg-opacity-10 rounded-xl p-4 text-center backdrop-blur-sm">
-                    <i class="fas fa-rocket text-3xl text-yellow-300 mb-2"></i>
-                    <h3 class="font-bold text-sm mb-1">경제 강국</h3>
-                    <p class="text-xs opacity-80">AI·K-콘텐츠</p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 sm:gap-3 md:gap-4 flex-grow">
+                <div class="category-item bg-white bg-opacity-10 rounded-lg sm:rounded-xl p-3 sm:p-4 text-center backdrop-blur-sm">
+                    <i class="fas fa-rocket text-2xl sm:text-3xl text-yellow-300 mb-2"></i>
+                    <h3 class="font-bold text-xs sm:text-sm mb-1">경제 강국</h3>
+                    <p class="text-xs opacity-80 hidden sm:block">AI·K-콘텐츠</p>
                 </div>
                 
-                <div class="category-item bg-white bg-opacity-10 rounded-xl p-4 text-center backdrop-blur-sm">
-                    <i class="fas fa-balance-scale text-3xl text-yellow-300 mb-2"></i>
-                    <h3 class="font-bold text-sm mb-1">민주주의</h3>
-                    <p class="text-xs opacity-80">제도 개혁</p>
+                <div class="category-item bg-white bg-opacity-10 rounded-lg sm:rounded-xl p-3 sm:p-4 text-center backdrop-blur-sm">
+                    <i class="fas fa-balance-scale text-2xl sm:text-3xl text-yellow-300 mb-2"></i>
+                    <h3 class="font-bold text-xs sm:text-sm mb-1">민주주의</h3>
+                    <p class="text-xs opacity-80 hidden sm:block">제도 개혁</p>
                 </div>
                 
-                <div class="category-item bg-white bg-opacity-10 rounded-xl p-4 text-center backdrop-blur-sm">
-                    <i class="fas fa-store text-3xl text-yellow-300 mb-2"></i>
-                    <h3 class="font-bold text-sm mb-1">소상공인</h3>
-                    <p class="text-xs opacity-80">공정 경제</p>
+                <div class="category-item bg-white bg-opacity-10 rounded-lg sm:rounded-xl p-3 sm:p-4 text-center backdrop-blur-sm">
+                    <i class="fas fa-store text-2xl sm:text-3xl text-yellow-300 mb-2"></i>
+                    <h3 class="font-bold text-xs sm:text-sm mb-1">소상공인</h3>
+                    <p class="text-xs opacity-80 hidden sm:block">공정 경제</p>
                 </div>
                 
-                <div class="category-item bg-white bg-opacity-10 rounded-xl p-4 text-center backdrop-blur-sm">
-                    <i class="fas fa-globe text-3xl text-yellow-300 mb-2"></i>
-                    <h3 class="font-bold text-sm mb-1">외교 안보</h3>
-                    <p class="text-xs opacity-80">실용 외교</p>
+                <div class="category-item bg-white bg-opacity-10 rounded-lg sm:rounded-xl p-3 sm:p-4 text-center backdrop-blur-sm">
+                    <i class="fas fa-globe text-2xl sm:text-3xl text-yellow-300 mb-2"></i>
+                    <h3 class="font-bold text-xs sm:text-sm mb-1">외교 안보</h3>
+                    <p class="text-xs opacity-80 hidden sm:block">실용 외교</p>
                 </div>
                 
-                <div class="category-item bg-white bg-opacity-10 rounded-xl p-4 text-center backdrop-blur-sm">
-                    <i class="fas fa-shield-alt text-3xl text-yellow-300 mb-2"></i>
-                    <h3 class="font-bold text-sm mb-1">국민 안전</h3>
-                    <p class="text-xs opacity-80">의료 개혁</p>
+                <div class="category-item bg-white bg-opacity-10 rounded-lg sm:rounded-xl p-3 sm:p-4 text-center backdrop-blur-sm">
+                    <i class="fas fa-shield-alt text-2xl sm:text-3xl text-yellow-300 mb-2"></i>
+                    <h3 class="font-bold text-xs sm:text-sm mb-1">국민 안전</h3>
+                    <p class="text-xs opacity-80 hidden sm:block">의료 개혁</p>
                 </div>
                 
-                <div class="category-item bg-white bg-opacity-10 rounded-xl p-4 text-center backdrop-blur-sm">
-                    <i class="fas fa-map-marked-alt text-3xl text-yellow-300 mb-2"></i>
-                    <h3 class="font-bold text-sm mb-1">균형 발전</h3>
-                    <p class="text-xs opacity-80">5극 3특</p>
+                <div class="category-item bg-white bg-opacity-10 rounded-lg sm:rounded-xl p-3 sm:p-4 text-center backdrop-blur-sm">
+                    <i class="fas fa-map-marked-alt text-2xl sm:text-3xl text-yellow-300 mb-2"></i>
+                    <h3 class="font-bold text-xs sm:text-sm mb-1">균형 발전</h3>
+                    <p class="text-xs opacity-80 hidden sm:block">5극 3특</p>
                 </div>
                 
-                <div class="category-item bg-white bg-opacity-10 rounded-xl p-4 text-center backdrop-blur-sm">
-                    <i class="fas fa-hands-helping text-3xl text-yellow-300 mb-2"></i>
-                    <h3 class="font-bold text-sm mb-1">노동 존중</h3>
-                    <p class="text-xs opacity-80">노동권 보장</p>
+                <div class="category-item bg-white bg-opacity-10 rounded-lg sm:rounded-xl p-3 sm:p-4 text-center backdrop-blur-sm">
+                    <i class="fas fa-hands-helping text-2xl sm:text-3xl text-yellow-300 mb-2"></i>
+                    <h3 class="font-bold text-xs sm:text-sm mb-1">노동 존중</h3>
+                    <p class="text-xs opacity-80 hidden sm:block">노동권 보장</p>
                 </div>
                 
-                <div class="category-item bg-white bg-opacity-10 rounded-xl p-4 text-center backdrop-blur-sm">
-                    <i class="fas fa-heart text-3xl text-yellow-300 mb-2"></i>
-                    <h3 class="font-bold text-sm mb-1">생활 안정</h3>
-                    <p class="text-xs opacity-80">복지 확대</p>
+                <div class="category-item bg-white bg-opacity-10 rounded-lg sm:rounded-xl p-3 sm:p-4 text-center backdrop-blur-sm">
+                    <i class="fas fa-heart text-2xl sm:text-3xl text-yellow-300 mb-2"></i>
+                    <h3 class="font-bold text-xs sm:text-sm mb-1">생활 안정</h3>
+                    <p class="text-xs opacity-80 hidden sm:block">복지 확대</p>
                 </div>
                 
-                <div class="category-item bg-white bg-opacity-10 rounded-xl p-4 text-center backdrop-blur-sm">
-                    <i class="fas fa-baby text-3xl text-yellow-300 mb-2"></i>
-                    <h3 class="font-bold text-sm mb-1">저출생 대응</h3>
-                    <p class="text-xs opacity-80">돌봄 사회</p>
+                <div class="category-item bg-white bg-opacity-10 rounded-lg sm:rounded-xl p-3 sm:p-4 text-center backdrop-blur-sm">
+                    <i class="fas fa-baby text-2xl sm:text-3xl text-yellow-300 mb-2"></i>
+                    <h3 class="font-bold text-xs sm:text-sm mb-1">저출생 대응</h3>
+                    <p class="text-xs opacity-80 hidden sm:block">돌봄 사회</p>
                 </div>
                 
-                <div class="category-item bg-white bg-opacity-10 rounded-xl p-4 text-center backdrop-blur-sm">
-                    <i class="fas fa-leaf text-3xl text-yellow-300 mb-2"></i>
-                    <h3 class="font-bold text-sm mb-1">기후 위기</h3>
-                    <p class="text-xs opacity-80">탄소 중립</p>
+                <div class="category-item bg-white bg-opacity-10 rounded-lg sm:rounded-xl p-3 sm:p-4 text-center backdrop-blur-sm">
+                    <i class="fas fa-leaf text-2xl sm:text-3xl text-yellow-300 mb-2"></i>
+                    <h3 class="font-bold text-xs sm:text-sm mb-1">기후 위기</h3>
+                    <p class="text-xs opacity-80 hidden sm:block">탄소 중립</p>
                 </div>
             </div>
 
             <!-- Footer -->
-            <div class="text-center mt-8 opacity-80">
-                <p class="text-lg font-medium">
+            <div class="text-center mt-4 sm:mt-6 md:mt-8 opacity-80">
+                <p class="text-sm sm:text-base md:text-lg font-medium">
                     미래 세대를 위한 <span class="text-yellow-300 font-bold">희망찬 대한민국</span> 건설
                 </p>
             </div>

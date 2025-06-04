@@ -12,21 +12,22 @@
             font-family: 'Noto Sans KR', sans-serif;
         }
         .slide-container {
-            width: 1280px;
-            min-height: 720px;
+            width: 100%;
+            max-width: 1280px;
+            min-height: 100vh;
             margin: 0 auto;
             background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3b82f6 100%);
             position: relative;
             overflow: hidden;
         }
         .main-title {
-            font-size: 3rem;
+            font-size: clamp(2rem, 5vw, 3rem);
             font-weight: 900;
             line-height: 1.1;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
         .section-title {
-            font-size: 1.5rem;
+            font-size: clamp(1.25rem, 3vw, 1.5rem);
             font-weight: 700;
             border-left: 4px solid #fbbf24;
             padding-left: 16px;
@@ -71,6 +72,23 @@
             0%, 100% { transform: translateY(0px) rotate(0deg); }
             50% { transform: translateY(-15px) rotate(5deg); }
         }
+        
+        @media (max-width: 768px) {
+            .icon-bg {
+                width: 48px;
+                height: 48px;
+            }
+            .floating-shape {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .icon-bg {
+                width: 40px;
+                height: 40px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -82,21 +100,21 @@
         </div>
 
         <!-- Main Content -->
-        <div class="relative z-10 h-full flex">
+        <div class="relative z-10 h-full flex flex-col md:flex-row">
             <!-- Left Column -->
-            <div class="w-1/2 px-12 py-16 flex flex-col justify-center">
-                <div class="mb-8">
-                    <div class="flex items-center mb-6">
+            <div class="w-full md:w-1/2 px-4 sm:px-8 md:px-12 py-6 sm:py-8 md:py-16 flex flex-col justify-center">
+                <div class="mb-6 sm:mb-8">
+                    <div class="flex items-center mb-4 sm:mb-6">
                         <div class="icon-bg mr-4">
-                            <i class="fas fa-rocket text-2xl text-blue-900"></i>
+                            <i class="fas fa-rocket text-xl sm:text-2xl text-blue-900"></i>
                         </div>
-                        <span class="text-xl font-medium text-yellow-300">공약 1</span>
+                        <span class="text-lg sm:text-xl font-medium text-yellow-300">공약 1</span>
                     </div>
-                    <h1 class="main-title mb-6">
+                    <h1 class="main-title mb-4 sm:mb-6">
                         세계를 선도하는<br>
                         <span class="text-yellow-300">경제 강국</span> 건설
                     </h1>
-                    <p class="text-xl leading-relaxed opacity-90">
+                    <p class="text-lg sm:text-xl leading-relaxed opacity-90">
                         AI 등 신산업 육성과<br>
                         K-콘텐츠 지원 강화를 통해<br>
                         <span class="text-yellow-300 font-bold">경제 강국으로 도약</span>
@@ -104,39 +122,39 @@
                 </div>
 
                 <!-- Key Stats -->
-                <div class="bg-white bg-opacity-10 rounded-2xl p-6 backdrop-blur-sm">
-                    <h3 class="text-lg font-bold mb-4 text-yellow-300">핵심 목표</h3>
-                    <div class="space-y-3">
+                <div class="bg-white bg-opacity-10 rounded-lg sm:rounded-xl md:rounded-2xl p-4 sm:p-5 md:p-6 backdrop-blur-sm">
+                    <h3 class="text-base sm:text-lg font-bold mb-3 sm:mb-4 text-yellow-300">핵심 목표</h3>
+                    <div class="space-y-2 sm:space-y-3">
                         <div class="flex items-center">
                             <i class="fas fa-target text-yellow-300 mr-3"></i>
-                            <span>K-콘텐츠 문화 수출 50조원 달성</span>
+                            <span class="text-sm sm:text-base">K-콘텐츠 문화 수출 50조원 달성</span>
                         </div>
                         <div class="flex items-center">
                             <i class="fas fa-cogs text-yellow-300 mr-3"></i>
-                            <span>AI 고속도로 구축 및 혁신 거점 육성</span>
+                            <span class="text-sm sm:text-base">AI 고속도로 구축 및 혁신 거점 육성</span>
                         </div>
                         <div class="flex items-center">
                             <i class="fas fa-chart-line text-yellow-300 mr-3"></i>
-                            <span>글로벌 4대 벤처 강국 실현</span>
+                            <span class="text-sm sm:text-base">글로벌 4대 벤처 강국 실현</span>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Right Column -->
-            <div class="w-1/2 px-12 py-16">
-                <h2 class="section-title text-white mb-8">핵심 정책</h2>
+            <div class="w-full md:w-1/2 px-4 sm:px-8 md:px-12 py-6 sm:py-8 md:py-16">
+                <h2 class="section-title text-white mb-6 sm:mb-8">핵심 정책</h2>
                 
-                <div class="space-y-6">
+                <div class="space-y-4 sm:space-y-5 md:space-y-6">
                     <!-- AI 강국 -->
-                    <div class="policy-card rounded-xl p-5">
+                    <div class="policy-card rounded-lg sm:rounded-xl p-4 sm:p-5">
                         <div class="flex items-start">
                             <div class="icon-bg flex-shrink-0">
-                                <i class="fas fa-brain text-xl text-blue-900"></i>
+                                <i class="fas fa-brain text-lg sm:text-xl text-blue-900"></i>
                             </div>
                             <div class="ml-4">
-                                <h3 class="font-bold text-lg mb-2 text-yellow-300">AI 강국 도약</h3>
-                                <p class="text-sm opacity-90 leading-relaxed">
+                                <h3 class="font-bold text-base sm:text-lg mb-2 text-yellow-300">AI 강국 도약</h3>
+                                <p class="text-xs sm:text-sm opacity-90 leading-relaxed">
                                     AI 관련 예산 선진국 수준 증액 • 고성능 GPU 확보 • AI 데이터 클러스터 조성 • '모두의 AI' 프로젝트 추진
                                 </p>
                             </div>
@@ -144,14 +162,14 @@
                     </div>
 
                     <!-- K-콘텐츠 -->
-                    <div class="policy-card rounded-xl p-5">
+                    <div class="policy-card rounded-lg sm:rounded-xl p-4 sm:p-5">
                         <div class="flex items-start">
                             <div class="icon-bg flex-shrink-0">
-                                <i class="fas fa-film text-xl text-blue-900"></i>
+                                <i class="fas fa-film text-lg sm:text-xl text-blue-900"></i>
                             </div>
                             <div class="ml-4">
-                                <h3 class="font-bold text-lg mb-2 text-yellow-300">K-콘텐츠 글로벌화</h3>
-                                <p class="text-sm opacity-90 leading-relaxed">
+                                <h3 class="font-bold text-base sm:text-lg mb-2 text-yellow-300">K-콘텐츠 글로벌화</h3>
+                                <p class="text-xs sm:text-sm opacity-90 leading-relaxed">
                                     K-컬처 글로벌 브랜드화 • 문화 수출 50조원 달성 • OTT 플랫폼 육성 • 문화예술인 복지 환경 구축
                                 </p>
                             </div>
@@ -159,14 +177,14 @@
                     </div>
 
                     <!-- K-방산 -->
-                    <div class="policy-card rounded-xl p-5">
+                    <div class="policy-card rounded-lg sm:rounded-xl p-4 sm:p-5">
                         <div class="flex items-start">
                             <div class="icon-bg flex-shrink-0">
-                                <i class="fas fa-shield-alt text-xl text-blue-900"></i>
+                                <i class="fas fa-shield-alt text-lg sm:text-xl text-blue-900"></i>
                             </div>
                             <div class="ml-4">
-                                <h3 class="font-bold text-lg mb-2 text-yellow-300">K-방산 육성</h3>
-                                <p class="text-sm opacity-90 leading-relaxed">
+                                <h3 class="font-bold text-base sm:text-lg mb-2 text-yellow-300">K-방산 육성</h3>
+                                <p class="text-xs sm:text-sm opacity-90 leading-relaxed">
                                     방산 수출 컨트롤 타워 신설 • 방위사업청 역량 강화 • 국방 AI R&D 투자 확대 • 방산 기업 세제 지원
                                 </p>
                             </div>
@@ -174,14 +192,14 @@
                     </div>
 
                     <!-- 벤처 생태계 -->
-                    <div class="policy-card rounded-xl p-5">
+                    <div class="policy-card rounded-lg sm:rounded-xl p-4 sm:p-5">
                         <div class="flex items-start">
                             <div class="icon-bg flex-shrink-0">
-                                <i class="fas fa-seedling text-xl text-blue-900"></i>
+                                <i class="fas fa-seedling text-lg sm:text-xl text-blue-900"></i>
                             </div>
                             <div class="ml-4">
-                                <h3 class="font-bold text-lg mb-2 text-yellow-300">벤처 생태계 육성</h3>
-                                <p class="text-sm opacity-90 leading-relaxed">
+                                <h3 class="font-bold text-base sm:text-lg mb-2 text-yellow-300">벤처 생태계 육성</h3>
+                                <p class="text-xs sm:text-sm opacity-90 leading-relaxed">
                                     국민 펀드 조성 • R&D 예산 확대 • 모태 펀드 확대 • 벤처·스타트업 지원 강화
                                 </p>
                             </div>
