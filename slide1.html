@@ -12,13 +12,13 @@
             font-family: 'Noto Sans KR', sans-serif;
             margin: 0;
             padding: 0;
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3b82f6 100%);
         }
         .slide-container {
             width: 100%;
             max-width: 1280px;
             min-height: 100vh;
             margin: 0 auto;
-            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3b82f6 100%);
             position: relative;
             overflow: hidden;
         }
@@ -118,75 +118,93 @@
 
             <!-- 10 Categories Grid -->
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 sm:gap-3 md:gap-4 flex-grow">
-                <div class="category-item bg-white bg-opacity-10 rounded-lg sm:rounded-xl p-3 sm:p-4 text-center backdrop-blur-sm">
+                <div class="category-item bg-white bg-opacity-10 rounded-lg sm:rounded-xl p-3 sm:p-4 text-center backdrop-blur-sm cursor-pointer" onclick="navigateToSlide(2)">
                     <i class="fas fa-rocket text-2xl sm:text-3xl text-yellow-300 mb-2"></i>
                     <h3 class="font-bold text-xs sm:text-sm mb-1">경제 강국</h3>
                     <p class="text-xs opacity-80 hidden sm:block">AI·K-콘텐츠</p>
                 </div>
+
                 
-                <div class="category-item bg-white bg-opacity-10 rounded-lg sm:rounded-xl p-3 sm:p-4 text-center backdrop-blur-sm">
+                <div class="category-item bg-white bg-opacity-10 rounded-lg sm:rounded-xl p-3 sm:p-4 text-center backdrop-blur-sm cursor-pointer" onclick="navigateToSlide(3)">
                     <i class="fas fa-balance-scale text-2xl sm:text-3xl text-yellow-300 mb-2"></i>
                     <h3 class="font-bold text-xs sm:text-sm mb-1">민주주의</h3>
                     <p class="text-xs opacity-80 hidden sm:block">제도 개혁</p>
                 </div>
                 
-                <div class="category-item bg-white bg-opacity-10 rounded-lg sm:rounded-xl p-3 sm:p-4 text-center backdrop-blur-sm">
+                <div class="category-item bg-white bg-opacity-10 rounded-lg sm:rounded-xl p-3 sm:p-4 text-center backdrop-blur-sm cursor-pointer" onclick="navigateToSlide(4)">
                     <i class="fas fa-store text-2xl sm:text-3xl text-yellow-300 mb-2"></i>
                     <h3 class="font-bold text-xs sm:text-sm mb-1">소상공인</h3>
                     <p class="text-xs opacity-80 hidden sm:block">공정 경제</p>
                 </div>
                 
-                <div class="category-item bg-white bg-opacity-10 rounded-lg sm:rounded-xl p-3 sm:p-4 text-center backdrop-blur-sm">
+                <div class="category-item bg-white bg-opacity-10 rounded-lg sm:rounded-xl p-3 sm:p-4 text-center backdrop-blur-sm cursor-pointer" onclick="navigateToSlide(5)">
                     <i class="fas fa-globe text-2xl sm:text-3xl text-yellow-300 mb-2"></i>
                     <h3 class="font-bold text-xs sm:text-sm mb-1">외교 안보</h3>
                     <p class="text-xs opacity-80 hidden sm:block">실용 외교</p>
                 </div>
                 
-                <div class="category-item bg-white bg-opacity-10 rounded-lg sm:rounded-xl p-3 sm:p-4 text-center backdrop-blur-sm">
+                <div class="category-item bg-white bg-opacity-10 rounded-lg sm:rounded-xl p-3 sm:p-4 text-center backdrop-blur-sm cursor-pointer" onclick="navigateToSlide(6)">
                     <i class="fas fa-shield-alt text-2xl sm:text-3xl text-yellow-300 mb-2"></i>
                     <h3 class="font-bold text-xs sm:text-sm mb-1">국민 안전</h3>
                     <p class="text-xs opacity-80 hidden sm:block">의료 개혁</p>
                 </div>
                 
-                <div class="category-item bg-white bg-opacity-10 rounded-lg sm:rounded-xl p-3 sm:p-4 text-center backdrop-blur-sm">
+                <div class="category-item bg-white bg-opacity-10 rounded-lg sm:rounded-xl p-3 sm:p-4 text-center backdrop-blur-sm cursor-pointer" onclick="navigateToSlide(7)">
                     <i class="fas fa-map-marked-alt text-2xl sm:text-3xl text-yellow-300 mb-2"></i>
                     <h3 class="font-bold text-xs sm:text-sm mb-1">균형 발전</h3>
                     <p class="text-xs opacity-80 hidden sm:block">5극 3특</p>
                 </div>
                 
-                <div class="category-item bg-white bg-opacity-10 rounded-lg sm:rounded-xl p-3 sm:p-4 text-center backdrop-blur-sm">
+                <div class="category-item bg-white bg-opacity-10 rounded-lg sm:rounded-xl p-3 sm:p-4 text-center backdrop-blur-sm cursor-pointer" onclick="navigateToSlide(8)">
                     <i class="fas fa-hands-helping text-2xl sm:text-3xl text-yellow-300 mb-2"></i>
                     <h3 class="font-bold text-xs sm:text-sm mb-1">노동 존중</h3>
                     <p class="text-xs opacity-80 hidden sm:block">노동권 보장</p>
                 </div>
                 
-                <div class="category-item bg-white bg-opacity-10 rounded-lg sm:rounded-xl p-3 sm:p-4 text-center backdrop-blur-sm">
+                <div class="category-item bg-white bg-opacity-10 rounded-lg sm:rounded-xl p-3 sm:p-4 text-center backdrop-blur-sm cursor-pointer" onclick="navigateToSlide(9)">
                     <i class="fas fa-heart text-2xl sm:text-3xl text-yellow-300 mb-2"></i>
                     <h3 class="font-bold text-xs sm:text-sm mb-1">생활 안정</h3>
                     <p class="text-xs opacity-80 hidden sm:block">복지 확대</p>
                 </div>
                 
-                <div class="category-item bg-white bg-opacity-10 rounded-lg sm:rounded-xl p-3 sm:p-4 text-center backdrop-blur-sm">
+                <div class="category-item bg-white bg-opacity-10 rounded-lg sm:rounded-xl p-3 sm:p-4 text-center backdrop-blur-sm cursor-pointer" onclick="navigateToSlide(10)">
                     <i class="fas fa-baby text-2xl sm:text-3xl text-yellow-300 mb-2"></i>
                     <h3 class="font-bold text-xs sm:text-sm mb-1">저출생 대응</h3>
                     <p class="text-xs opacity-80 hidden sm:block">돌봄 사회</p>
                 </div>
                 
-                <div class="category-item bg-white bg-opacity-10 rounded-lg sm:rounded-xl p-3 sm:p-4 text-center backdrop-blur-sm">
+                <div class="category-item bg-white bg-opacity-10 rounded-lg sm:rounded-xl p-3 sm:p-4 text-center backdrop-blur-sm cursor-pointer" onclick="navigateToSlide(11)">
                     <i class="fas fa-leaf text-2xl sm:text-3xl text-yellow-300 mb-2"></i>
                     <h3 class="font-bold text-xs sm:text-sm mb-1">기후 위기</h3>
                     <p class="text-xs opacity-80 hidden sm:block">탄소 중립</p>
                 </div>
             </div>
 
+
             <!-- Footer -->
-            <div class="text-center mt-4 sm:mt-6 md:mt-8 opacity-80">
-                <p class="text-sm sm:text-base md:text-lg font-medium">
+            <div class="text-center mt-4 sm:mt-6 opacity-80">
+                <p class="text-sm sm:text-base font-medium">
                     미래 세대를 위한 <span class="text-yellow-300 font-bold">희망찬 대한민국</span> 건설
                 </p>
             </div>
         </div>
     </div>
+    
+    <script>
+        function navigateToSlide(slideNumber) {
+            // Check if we're in an iframe
+            if (window.parent && window.parent !== window) {
+                // Send message to parent window to change slide
+                window.parent.postMessage({
+                    type: 'navigateToSlide',
+                    slideNumber: slideNumber
+                }, '*');
+            } else {
+                // If not in iframe, navigate directly
+                window.location.href = `slide${slideNumber}.html`;
+            }
+        }
+    </script>
 </body>
 </html>
 

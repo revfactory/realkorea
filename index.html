@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>슬라이드 네비게이션</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <style>
         body {
             margin: 0;
@@ -21,39 +22,86 @@
         }
         
         .controls {
-            background-color: #ecf0f1;
-            padding: 15px 20px;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            padding: 8px 15px;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            gap: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            position: relative;
         }
         
-        .controls button {
-            padding: 8px 20px;
+        .nav-left, .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .nav-center {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .nav-btn {
+            padding: 6px 12px;
             background-color: #3498db;
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 20px;
             cursor: pointer;
-            font-size: 14px;
-            transition: background-color 0.3s;
+            font-size: 12px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            min-width: 32px;
+            height: 32px;
+            justify-content: center;
         }
         
-        .controls button:hover:not(:disabled) {
+        .nav-btn:hover:not(:disabled) {
             background-color: #2980b9;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3);
         }
         
-        .controls button:disabled {
-            background-color: #95a5a6;
+        .nav-btn:disabled {
+            background-color: #7f8c8d;
             cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .home-btn {
+            background-color: #e74c3c;
+            padding: 6px 10px;
+        }
+        
+        .home-btn:hover {
+            background-color: #c0392b;
+            box-shadow: 0 2px 8px rgba(231, 76, 60, 0.3);
         }
         
         .current-slide {
-            font-size: 18px;
-            font-weight: bold;
-            color: #2c3e50;
+            font-size: 13px;
+            font-weight: 600;
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 4px 12px;
+            border-radius: 15px;
+            backdrop-blur: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .slide-counter {
+            font-size: 11px;
+            color: #bdc3c7;
+            margin-left: 8px;
         }
         
         iframe {
@@ -64,38 +112,66 @@
         
         @media (max-width: 768px) {
             .controls {
-                padding: 12px 15px;
-                gap: 15px;
+                padding: 6px 10px;
             }
             
-            .controls button {
-                padding: 10px 15px;
-                font-size: 14px;
+            .nav-left, .nav-right {
+                gap: 6px;
+            }
+            
+            .nav-center {
+                gap: 8px;
+            }
+            
+            .nav-btn {
+                padding: 5px 8px;
+                font-size: 11px;
+                min-width: 28px;
+                height: 28px;
             }
             
             .current-slide {
-                font-size: 16px;
+                font-size: 12px;
+                padding: 3px 8px;
+            }
+            
+            .slide-counter {
+                font-size: 10px;
+                margin-left: 6px;
             }
         }
         
         @media (max-width: 480px) {
             .controls {
-                padding: 10px;
-                gap: 10px;
-                flex-wrap: wrap;
+                padding: 5px 8px;
+                flex-direction: column;
+                gap: 6px;
             }
             
-            .controls button {
-                padding: 8px 12px;
-                font-size: 12px;
+            .nav-center {
+                position: static;
+                transform: none;
+                order: -1;
+            }
+            
+            .nav-left, .nav-right {
+                gap: 4px;
+            }
+            
+            .nav-btn {
+                padding: 4px 6px;
+                font-size: 10px;
+                min-width: 24px;
+                height: 24px;
             }
             
             .current-slide {
-                font-size: 14px;
-                width: 100%;
-                text-align: center;
-                order: -1;
-                margin-bottom: 10px;
+                font-size: 11px;
+                padding: 2px 6px;
+            }
+            
+            .slide-counter {
+                display: none;
             }
         }
     </style>
@@ -103,9 +179,32 @@
 <body>
     <div class="content">
         <div class="controls">
-            <button onclick="previousSlide()" id="prevBtn">이전</button>
-            <span class="current-slide" id="currentSlide">슬라이드 1 / 11</span>
-            <button onclick="nextSlide()" id="nextBtn">다음</button>
+            <div class="nav-left">
+                <button onclick="goHome()" class="nav-btn home-btn" title="홈으로">
+                    <i class="fas fa-home"></i>
+                </button>
+            </div>
+            
+            <div class="nav-center">
+                <button onclick="previousSlide()" id="prevBtn" class="nav-btn" title="이전 슬라이드">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="current-slide" id="currentSlide">
+                    슬라이드 1
+                    <span class="slide-counter">/ 11</span>
+                </div>
+                
+                <button onclick="nextSlide()" id="nextBtn" class="nav-btn" title="다음 슬라이드">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <div class="nav-right">
+                <button onclick="toggleFullscreen()" class="nav-btn" id="fullscreenBtn" title="전체화면">
+                    <i class="fas fa-expand"></i>
+                </button>
+            </div>
         </div>
         <iframe id="slideFrame" src="slide1.html"></iframe>
     </div>
@@ -136,11 +235,36 @@
         
         function updateUI() {
             // Update current slide display
-            document.getElementById('currentSlide').textContent = `슬라이드 ${currentSlide} / ${totalSlides}`;
+            document.getElementById('currentSlide').innerHTML = `슬라이드 ${currentSlide}<span class="slide-counter">/ ${totalSlides}</span>`;
             
             // Update button states
             document.getElementById('prevBtn').disabled = currentSlide === 1;
             document.getElementById('nextBtn').disabled = currentSlide === totalSlides;
+        }
+        
+        function goHome() {
+            loadSlide(1);
+        }
+        
+        function toggleFullscreen() {
+            const fullscreenBtn = document.getElementById('fullscreenBtn');
+            const icon = fullscreenBtn.querySelector('i');
+            
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().then(() => {
+                    icon.className = 'fas fa-compress';
+                    fullscreenBtn.title = '전체화면 해제';
+                }).catch(err => {
+                    console.log('Fullscreen error:', err);
+                });
+            } else {
+                document.exitFullscreen().then(() => {
+                    icon.className = 'fas fa-expand';
+                    fullscreenBtn.title = '전체화면';
+                }).catch(err => {
+                    console.log('Exit fullscreen error:', err);
+                });
+            }
         }
         
         // Keyboard navigation
@@ -149,6 +273,34 @@
                 previousSlide();
             } else if (e.key === 'ArrowRight') {
                 nextSlide();
+            } else if (e.key === 'Home') {
+                goHome();
+            } else if (e.key === 'F11') {
+                e.preventDefault();
+                toggleFullscreen();
+            } else if (e.key === 'Escape' && document.fullscreenElement) {
+                document.exitFullscreen();
+            }
+        });
+        
+        // Fullscreen change event
+        document.addEventListener('fullscreenchange', () => {
+            const fullscreenBtn = document.getElementById('fullscreenBtn');
+            const icon = fullscreenBtn.querySelector('i');
+            
+            if (document.fullscreenElement) {
+                icon.className = 'fas fa-compress';
+                fullscreenBtn.title = '전체화면 해제';
+            } else {
+                icon.className = 'fas fa-expand';
+                fullscreenBtn.title = '전체화면';
+            }
+        });
+        
+        // Listen for messages from iframe
+        window.addEventListener('message', (event) => {
+            if (event.data.type === 'navigateToSlide') {
+                loadSlide(event.data.slideNumber);
             }
         });
         
