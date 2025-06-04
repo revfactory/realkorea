@@ -38,6 +38,22 @@
             box-shadow: 0 15px 30px rgba(251, 191, 36, 0.4);
             animation: pulse 4s ease-in-out infinite;
         }
+        .header-card {
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255,255,255,0.25);
+            border-radius: 18px;
+        }
+        .icon-container {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
         .region-item {
             background: rgba(255,255,255,0.12);
             backdrop-filter: blur(15px);
@@ -143,19 +159,30 @@
             <div class="floating-shape shape-2"></div>
         </div>
 
-        <!-- Header Section -->
-        <div class="relative z-10 text-center pt-4 sm:pt-5 md:pt-6 pb-3 sm:pb-4">
-            <span class="text-sm sm:text-base font-medium text-yellow-300 mb-1 sm:mb-2 block">공약 6</span>
-            <h1 class="main-title mb-2 sm:mb-3 px-4">
-                <span class="text-yellow-300">세종 행정수도</span>와 <span class="text-yellow-300">5극 3특</span> 추진
-            </h1>
-            <p class="text-xs sm:text-sm md:text-base opacity-90 px-4">
-                국토 균형발전 실현을 위한 <span class="text-yellow-300 font-bold">지방분권과 자치강화</span>
-            </p>
-        </div>
+        <!-- Main Content -->
+        <div class="relative z-10 h-full flex flex-col px-4 sm:px-6 md:px-10 py-4 sm:py-5 md:py-6">
+            <!-- Header Section -->
+            <div class="header-card px-4 sm:px-5 md:px-6 py-3 sm:py-4 mb-3 sm:mb-4 md:mb-5">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0">
+                    <div class="flex items-center">
+                        <div class="icon-container mr-3 sm:mr-4">
+                            <i class="fas fa-landmark text-lg text-blue-900"></i>
+                        </div>
+                        <div>
+                            <span class="text-sm sm:text-base font-medium text-yellow-300 block mb-1">공약 6</span>
+                            <h1 class="main-title">
+                                <span class="text-yellow-300">세종 행정수도</span>와 <span class="text-yellow-300">5극 3특</span> 추진
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="text-left sm:text-right">
+                        <p class="text-base sm:text-lg font-bold text-yellow-300 mb-0 sm:mb-1">국토 균형발전</p>
+                        <p class="text-sm sm:text-base opacity-90">지방분권과 자치강화</p>
+                    </div>
+                </div>
+            </div>
 
-        <!-- Main Symmetric Layout -->
-        <div class="relative z-10 px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4">
+            <!-- Main Symmetric Layout -->
             <div class="grid grid-cols-1 md:grid-cols-12 gap-3 sm:gap-4 md:gap-6 items-start md:items-center">
                 <!-- Left Side: 5극 (5대 초광역권) -->
                 <div class="col-span-1 md:col-span-4">
@@ -256,10 +283,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-        <!-- Bottom Policy Cards -->
-        <div class="relative z-10 px-4 sm:px-6 md:px-8 pb-4 sm:pb-5 md:pb-6">
+            
+            <!-- Bottom Policy Cards -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4">
                 <!-- 세종 행정수도 완성 -->
                 <div class="policy-card p-3 sm:p-4 text-center flex flex-col justify-center">
@@ -305,8 +330,8 @@
                     </ul>
                 </div>
             </div>
+            </div>
         </div>
-    </div>
 </body>
 </html>
 

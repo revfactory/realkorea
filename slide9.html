@@ -130,6 +130,22 @@
             0%, 100% { opacity: 0.4; transform: translateY(0px) rotate(0deg); }
             50% { opacity: 0.7; transform: translateY(-10px) rotate(2deg); }
         }
+        .header-card {
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255,255,255,0.25);
+            border-radius: 18px;
+        }
+        .icon-container {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
     </style>
 </head>
 <body>
@@ -141,19 +157,31 @@
             <div class="floating-shape shape-3"></div>
         </div>
 
-        <!-- Header Section -->
-        <div class="relative z-10 text-center pt-4 sm:pt-5 md:pt-6 pb-3 sm:pb-4">
-            <span class="text-lg font-medium text-yellow-300 mb-2 block">공약 8</span>
-            <h1 class="main-title mb-3">
-                <span class="text-yellow-300">생활 안정</span>으로 아동·청년·어르신 등 <span class="text-yellow-300">모두가 잘사는</span> 나라
-            </h1>
-            <p class="text-lg opacity-90">
-                전 생애주기 <span class="text-yellow-300 font-bold">소득보장</span>과 <span class="text-yellow-300 font-bold">돌봄체계</span> 구축
-            </p>
-        </div>
+        <!-- Main Content -->
+        <div class="relative z-10 h-full flex flex-col px-4 sm:px-6 md:px-10 py-4 sm:py-5 md:py-6">
+            <!-- Header Section -->
+            <div class="header-card px-4 sm:px-5 md:px-6 py-3 sm:py-4 mb-3 sm:mb-4 md:mb-5">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0">
+                    <div class="flex items-center">
+                        <div class="icon-container mr-3 sm:mr-4">
+                            <i class="fas fa-heart text-lg text-blue-900"></i>
+                        </div>
+                        <div>
+                            <span class="text-sm sm:text-base font-medium text-yellow-300 block mb-1">공약 8</span>
+                            <h1 class="main-title">
+                                <span class="text-yellow-300">생활 안정</span>으로 <span class="text-yellow-300">모두가 잘사는</span> 나라
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="text-left sm:text-right">
+                        <p class="text-base sm:text-lg font-bold text-yellow-300 mb-0 sm:mb-1">생애주기 보장</p>
+                        <p class="text-sm sm:text-base opacity-90">소득보장과 돌봄체계</p>
+                    </div>
+                </div>
+            </div>
 
-        <!-- Timeline Section -->
-        <div class="timeline-container relative px-8">
+            <!-- Timeline Section -->
+            <div class="timeline-container relative px-8">
             <!-- Timeline Line -->
             <div class="timeline-line"></div>
 
@@ -304,10 +332,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+            </div>
 
-        <!-- Universal Support Section -->
-        <div class="relative z-10 px-4 sm:px-6 md:px-8 pb-4 sm:pb-5 md:pb-6">
+            <!-- Universal Support Section -->
             <div class="universal-support p-6">
                 <h2 class="text-xl font-bold text-yellow-300 text-center mb-4">전 연령 공통 지원</h2>
                 <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-3 md:gap-4">
@@ -343,10 +370,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+            
 
-        <!-- Bottom Summary -->
-        <div class="relative z-10 text-center pb-4">
+            <!-- Bottom Summary -->
+            <div class="text-center pb-4">
             <div class="flex items-center justify-center space-x-12">
                 <div class="text-center">
                     <div class="text-lg font-bold text-yellow-300">생애주기별</div>
@@ -361,8 +388,8 @@
                     <div class="text-xs opacity-90">필수생활비 부담완화</div>
                 </div>
             </div>
+            </div>
         </div>
-    </div>
 </body>
 </html>
 

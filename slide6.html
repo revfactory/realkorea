@@ -62,6 +62,22 @@
             margin: 0 auto 8px;
             box-shadow: 0 8px 20px rgba(251, 191, 36, 0.3);
         }
+        .header-card {
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255,255,255,0.25);
+            border-radius: 18px;
+        }
+        .icon-container {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
         .header-banner {
             background: rgba(255,255,255,0.12);
             backdrop-filter: blur(15px);
@@ -136,17 +152,25 @@
         </div>
 
         <!-- Main Content -->
-        <div class="relative z-10 h-full flex flex-col px-4 sm:px-6 md:px-10 py-3 sm:py-4">
+        <div class="relative z-10 h-full flex flex-col px-4 sm:px-6 md:px-10 py-4 sm:py-5 md:py-6">
             <!-- Header Section -->
-            <div class="header-banner px-3 sm:px-4 py-1.5 sm:py-2 mb-3 sm:mb-4">
-                <div class="text-center">
-                    <span class="text-sm sm:text-base font-medium text-yellow-300 mb-1 block">공약 5</span>
-                    <h1 class="main-title mb-1 sm:mb-2">
-                        국민의 <span class="text-yellow-300">생명과 안전</span>을 지키는 나라 건설
-                    </h1>
-                    <p class="text-xs sm:text-sm md:text-base opacity-90">
-                        안전사회 구축과 <span class="text-yellow-300 font-bold">의료 대란 해결</span> 및 의료 개혁 추진
-                    </p>
+            <div class="header-card px-4 sm:px-5 md:px-6 py-3 sm:py-4 mb-3 sm:mb-4 md:mb-5">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0">
+                    <div class="flex items-center">
+                        <div class="icon-container mr-3 sm:mr-4">
+                            <i class="fas fa-shield-alt text-lg text-blue-900"></i>
+                        </div>
+                        <div>
+                            <span class="text-sm sm:text-base font-medium text-yellow-300 block mb-1">공약 5</span>
+                            <h1 class="main-title">
+                                국민의 <span class="text-yellow-300">생명과 안전</span>을 지키는 나라
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="text-left sm:text-right">
+                        <p class="text-base sm:text-lg font-bold text-yellow-300 mb-0 sm:mb-1">안전사회 구축</p>
+                        <p class="text-sm sm:text-base opacity-90">의료대란 해결과 개혁</p>
+                    </div>
                 </div>
             </div>
 

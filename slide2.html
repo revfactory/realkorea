@@ -54,6 +54,22 @@
             justify-content: center;
             margin-bottom: 12px;
         }
+        .header-card {
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255,255,255,0.25);
+            border-radius: 18px;
+        }
+        .icon-container {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
         .floating-elements {
             position: absolute;
             width: 100%;
@@ -100,26 +116,39 @@
         </div>
 
         <!-- Main Content -->
-        <div class="relative z-10 h-full flex flex-col md:flex-row">
-            <!-- Left Column -->
-            <div class="w-full md:w-1/2 px-4 sm:px-8 md:px-12 py-6 sm:py-8 md:py-16 flex flex-col justify-center">
-                <div class="mb-6 sm:mb-8">
-                    <div class="flex items-center mb-4 sm:mb-6">
-                        <div class="icon-bg mr-4">
-                            <i class="fas fa-rocket text-xl sm:text-2xl text-blue-900"></i>
+        <div class="relative z-10 h-full flex flex-col px-4 sm:px-6 md:px-10 py-4 sm:py-5 md:py-6">
+            <!-- Header Section -->
+            <div class="header-card px-4 sm:px-5 md:px-6 py-3 sm:py-4 mb-3 sm:mb-4 md:mb-5">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0">
+                    <div class="flex items-center">
+                        <div class="icon-container mr-3 sm:mr-4">
+                            <i class="fas fa-rocket text-lg text-blue-900"></i>
                         </div>
-                        <span class="text-lg sm:text-xl font-medium text-yellow-300">공약 1</span>
+                        <div>
+                            <span class="text-sm sm:text-base font-medium text-yellow-300 block mb-1">공약 1</span>
+                            <h1 class="main-title">
+                                세계를 선도하는 <span class="text-yellow-300">경제 강국</span> 건설
+                            </h1>
+                        </div>
                     </div>
-                    <h1 class="main-title mb-4 sm:mb-6">
-                        세계를 선도하는<br>
-                        <span class="text-yellow-300">경제 강국</span> 건설
-                    </h1>
-                    <p class="text-lg sm:text-xl leading-relaxed opacity-90">
-                        AI 등 신산업 육성과<br>
-                        K-콘텐츠 지원 강화를 통해<br>
-                        <span class="text-yellow-300 font-bold">경제 강국으로 도약</span>
-                    </p>
+                    <div class="text-left sm:text-right">
+                        <p class="text-base sm:text-lg font-bold text-yellow-300 mb-0 sm:mb-1">신산업 육성</p>
+                        <p class="text-sm sm:text-base opacity-90">AI와 K-콘텐츠 강국 실현</p>
+                    </div>
                 </div>
+            </div>
+
+            <!-- Content Section -->
+            <div class="flex-1 flex flex-col md:flex-row">
+                <!-- Left Column -->
+                <div class="w-full md:w-1/2 px-4 sm:px-8 md:px-12 py-6 sm:py-8 md:py-16 flex flex-col justify-center">
+                    <div class="mb-6 sm:mb-8">
+                        <p class="text-lg sm:text-xl leading-relaxed opacity-90">
+                            AI 등 신산업 육성과<br>
+                            K-콘텐츠 지원 강화를 통해<br>
+                            <span class="text-yellow-300 font-bold">경제 강국으로 도약</span>
+                        </p>
+                    </div>
 
                 <!-- Key Stats -->
                 <div class="bg-white bg-opacity-10 rounded-lg sm:rounded-xl md:rounded-2xl p-4 sm:p-5 md:p-6 backdrop-blur-sm">
@@ -139,10 +168,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
+                </div>
 
-            <!-- Right Column -->
-            <div class="w-full md:w-1/2 px-4 sm:px-8 md:px-12 py-6 sm:py-8 md:py-16">
+                <!-- Right Column -->
+                <div class="w-full md:w-1/2 px-4 sm:px-8 md:px-12 py-6 sm:py-8 md:py-16">
                 <h2 class="section-title text-white mb-6 sm:mb-8">핵심 정책</h2>
                 
                 <div class="space-y-4 sm:space-y-5 md:space-y-6">
@@ -206,6 +235,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     </div>
