@@ -21,7 +21,7 @@
             overflow: hidden;
         }
         .main-title {
-            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-size: clamp(1.5rem, 4vw, 2.6rem);
             font-weight: 900;
             line-height: 1.1;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
@@ -86,6 +86,21 @@
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
+        }
+        .bubble-badge {
+            position: absolute;
+            top: -18px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            color: #1e40af;
+            font-weight: 900;
+            font-size: 0.875rem;
+            padding: 2px 20px;
+            border-radius: 20px;
+            border: 3px solid rgba(255,255,255,0.9);
+            box-shadow: 0 8px 20px rgba(251, 191, 36, 0.4);
+            z-index: 10;
         }
         .main-icon::before {
             content: '';
@@ -169,18 +184,16 @@
         <!-- Main Content -->
         <div class="relative z-10 h-full flex flex-col px-4 sm:px-6 md:px-10 py-4 sm:py-5 md:py-6">
             <!-- Header Section -->
-            <div class="header-card px-4 sm:px-5 md:px-6 py-3 sm:py-4 mb-3 sm:mb-4 md:mb-5">
+            <div class="header-card px-4 sm:px-5 md:px-6 py-3 sm:py-4 mb-3 sm:mb-4 md:mb-5 relative">
+                <div class="bubble-badge">공약 9</div>
                 <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0">
                     <div class="flex items-center">
                         <div class="icon-container mr-3 sm:mr-4">
                             <i class="fas fa-baby text-lg text-blue-900"></i>
                         </div>
-                        <div>
-                            <span class="text-sm sm:text-base font-medium text-yellow-300 block mb-1">공약 9</span>
-                            <h1 class="main-title">
-                                <span class="text-yellow-300">저출생·고령화 위기 극복</span> 및 <span class="text-yellow-300">함께 돌보는</span> 국가
-                            </h1>
-                        </div>
+                        <h1 class="main-title">
+                            <span class="text-yellow-300">저출생·고령화</span> 위기 극복
+                        </h1>
                     </div>
                     <div class="text-left sm:text-right">
                         <p class="text-base sm:text-lg font-bold text-yellow-300 mb-0 sm:mb-1">돌봄사회 구축</p>
