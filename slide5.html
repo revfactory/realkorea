@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>외교 안보 강국 건설</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3b82f6 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .main-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .column-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(12px);
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 18px;
+            transition: all 0.3s ease;
+            height: 500px;
+        }
+        .column-card:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        .policy-item {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+        .policy-item:hover {
+            background: rgba(255,255,255,0.12);
+        }
+        .icon-header {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 8px;
+            box-shadow: 0 6px 15px rgba(251, 191, 36, 0.3);
+        }
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        .floating-element {
+            position: absolute;
+            background: rgba(255,255,255,0.04);
+            animation: drift 15s ease-in-out infinite;
+        }
+        .element-1 { width: 100px; height: 50px; border-radius: 25px; top: 8%; right: 5%; animation-delay: 0s; }
+        .element-2 { width: 80px; height: 80px; border-radius: 50%; bottom: 12%; left: 8%; animation-delay: 7s; }
+        .element-3 { width: 70px; height: 35px; border-radius: 18px; top: 55%; right: 12%; animation-delay: 3s; }
+        
+        @keyframes drift {
+            0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+            25% { transform: translateY(-12px) translateX(8px) rotate(3deg); }
+            75% { transform: translateY(8px) translateX(-6px) rotate(-2deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container text-white relative">
+        <!-- Floating Background Elements -->
+        <div class="floating-elements">
+            <div class="floating-element element-1"></div>
+            <div class="floating-element element-2"></div>
+            <div class="floating-element element-3"></div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="relative z-10 h-full flex flex-col px-10 py-4">
+            <!-- Header Section -->
+            <div class="text-center mb-4">
+                <span class="text-lg font-medium text-yellow-300 mb-2 block">공약 4</span>
+                <h1 class="main-title mb-3">
+                    <span class="text-yellow-300">외교 안보</span> 강국 건설
+                </h1>
+                <p class="text-lg opacity-90">
+                    튼튼한 경제안보 구축과 지속가능한 <span class="text-yellow-300 font-bold">한반도 평화</span> 실현
+                </p>
+            </div>
+
+            <!-- Three Column Layout -->
+            <div class="flex-1 grid grid-cols-3 gap-4">
+                <!-- Column 1: 경제외교 & 국제협력 -->
+                <div class="column-card p-3 flex flex-col">
+                    <div class="text-center mb-2">
+                        <div class="icon-header">
+                            <i class="fas fa-globe-americas text-base text-blue-900"></i>
+                        </div>
+                        <h2 class="text-base font-bold text-yellow-300 mb-1">경제외교 & 국제협력</h2>
+                        <p class="text-xs opacity-80">글로벌 경제외교 강화</p>
+                    </div>
+
+                    <div class="space-y-1.5 flex-1">
+                        <!-- 경제외교 강화 -->
+                        <div class="policy-item p-2">
+                            <div class="flex items-center mb-1">
+                                <i class="fas fa-handshake text-yellow-300 mr-2 text-xs"></i>
+                                <h3 class="font-bold text-xs">경제외교 강화</h3>
+                            </div>
+                            <ul class="text-xs space-y-0.5 opacity-90">
+                                <li>• G20/G7 글로벌 현안 참여</li>
+                                <li>• 2025 경주 APEC 성공개최</li>
+                                <li>• 주요국 경제안보 연대 강화</li>
+                                <li>• 통상환경 변화 적극 대응</li>
+                            </ul>
+                        </div>
+
+                        <!-- 외교영역 확대 -->
+                        <div class="policy-item p-2">
+                            <div class="flex items-center mb-1">
+                                <i class="fas fa-expand-arrows-alt text-yellow-300 mr-2 text-xs"></i>
+                                <h3 class="font-bold text-xs">외교영역 확대</h3>
+                            </div>
+                            <ul class="text-xs space-y-0.5 opacity-90">
+                                <li>• 신아시아 전략 추진</li>
+                                <li>• 글로벌 사우스 협력 강화</li>
+                                <li>• EU·유럽 실질협력 확대</li>
+                                <li>• 다변화된 외교 파트너십</li>
+                            </ul>
+                        </div>
+
+                        <!-- 무역구조 혁신 -->
+                        <div class="policy-item p-2">
+                            <div class="flex items-center mb-1">
+                                <i class="fas fa-exchange-alt text-yellow-300 mr-2 text-xs"></i>
+                                <h3 class="font-bold text-xs">무역구조 혁신</h3>
+                            </div>
+                            <ul class="text-xs space-y-0.5 opacity-90">
+                                <li>• 수출 시장·품목 다변화</li>
+                                <li>• 핵심소재 공급망 안정화</li>
+                                <li>• 기후위기 환경무역 대응</li>
+                                <li>• 전략적 통상정책 추진</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2: 한반도 평화 & 한미동맹 -->
+                <div class="column-card p-3 flex flex-col">
+                    <div class="text-center mb-2">
+                        <div class="icon-header">
+                            <i class="fas fa-dove text-base text-blue-900"></i>
+                        </div>
+                        <h2 class="text-base font-bold text-yellow-300 mb-1">한반도 평화 & 동맹</h2>
+                        <p class="text-xs opacity-80">평화통일과 안보협력</p>
+                    </div>
+
+                    <div class="space-y-1.5 flex-1">
+                        <!-- 한반도 비핵화 -->
+                        <div class="policy-item p-2">
+                            <div class="flex items-center mb-1">
+                                <i class="fas fa-peace text-yellow-300 mr-2 text-xs"></i>
+                                <h3 class="font-bold text-xs">한반도 비핵화</h3>
+                            </div>
+                            <ul class="text-xs space-y-0.5 opacity-90">
+                                <li>• 북한 핵위협 단계적 감축</li>
+                                <li>• 비핵·평화체제 실질 진전</li>
+                                <li>• 한반도 군사적 긴장 완화</li>
+                                <li>• 우발적 충돌 방지 체계</li>
+                            </ul>
+                        </div>
+
+                        <!-- 굳건한 한미동맹 -->
+                        <div class="policy-item p-2">
+                            <div class="flex items-center mb-1">
+                                <i class="fas fa-flag-usa text-yellow-300 mr-2 text-xs"></i>
+                                <h3 class="font-bold text-xs">굳건한 한미동맹</h3>
+                            </div>
+                            <ul class="text-xs space-y-0.5 opacity-90">
+                                <li>• 전방위적 억제능력 확보</li>
+                                <li>• 한국형 미사일방어체계</li>
+                                <li>• 전시작전권 환수 추진</li>
+                                <li>• 한미동맹 기반 안보협력</li>
+                            </ul>
+                        </div>
+
+                        <!-- 남북관계 복원 -->
+                        <div class="policy-item p-2">
+                            <div class="flex items-center mb-1">
+                                <i class="fas fa-hands-helping text-yellow-300 mr-2 text-xs"></i>
+                                <h3 class="font-bold text-xs">남북관계 복원</h3>
+                            </div>
+                            <ul class="text-xs space-y-0.5 opacity-90">
+                                <li>• 화해·협력으로 전환</li>
+                                <li>• 신뢰구축 조치 추진</li>
+                                <li>• 이산가족 상봉 추진</li>
+                                <li>• 인도주의 교류협력</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 3: 경제안보 & 해양안보 -->
+                <div class="column-card p-3 flex flex-col">
+                    <div class="text-center mb-2">
+                        <div class="icon-header">
+                            <i class="fas fa-shield-alt text-base text-blue-900"></i>
+                        </div>
+                        <h2 class="text-base font-bold text-yellow-300 mb-1">경제안보 & 해양안보</h2>
+                        <p class="text-xs opacity-80">안보기반 경제발전</p>
+                    </div>
+
+                    <div class="space-y-1.5 flex-1">
+                        <!-- 경제안보 강화 -->
+                        <div class="policy-item p-2">
+                            <div class="flex items-center mb-1">
+                                <i class="fas fa-industry text-yellow-300 mr-2 text-xs"></i>
+                                <h3 class="font-bold text-xs">경제안보 강화</h3>
+                            </div>
+                            <ul class="text-xs space-y-0.5 opacity-90">
+                                <li>• 전략산업 국내생산 촉진</li>
+                                <li>• 무역안보 단속체계 확립</li>
+                                <li>• 주력제조업 경쟁력 강화</li>
+                                <li>• 수출산업 보호 체계</li>
+                            </ul>
+                        </div>
+
+                        <!-- 물류·식량안보 -->
+                        <div class="policy-item p-2">
+                            <div class="flex items-center mb-1">
+                                <i class="fas fa-ship text-yellow-300 mr-2 text-xs"></i>
+                                <h3 class="font-bold text-xs">물류·식량안보</h3>
+                            </div>
+                            <ul class="text-xs space-y-0.5 opacity-90">
+                                <li>• 전략물자 국적선박 확보</li>
+                                <li>• 쌀 등 주요농산물 안정공급</li>
+                                <li>• 식량자급률 제고</li>
+                                <li>• 공급망 안정화 실현</li>
+                            </ul>
+                        </div>
+
+                        <!-- 해양안보 -->
+                        <div class="policy-item p-2">
+                            <div class="flex items-center mb-1">
+                                <i class="fas fa-anchor text-yellow-300 mr-2 text-xs"></i>
+                                <h3 class="font-bold text-xs">해양안보</h3>
+                            </div>
+                            <ul class="text-xs space-y-0.5 opacity-90">
+                                <li>• 어업협정 이행 강화</li>
+                                <li>• 불법중국어선 강력대응</li>
+                                <li>• 해양주권 수호 강화</li>
+                                <li>• 재외국민 권익 보호</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Summary -->
+            <div class="mt-2 text-center bg-white bg-opacity-10 rounded-xl px-6 py-2 backdrop-blur-sm">
+                <p class="text-base font-medium">
+                    <span class="text-yellow-300 font-bold">실용적 외교</span>와 <span class="text-yellow-300 font-bold">경제안보</span>로 세계 질서 변화에 능동 대처
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

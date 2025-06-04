@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>노동이 존중받고 모든 사람의 권리가 보장되는 사회 건설</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3b82f6 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .main-title {
+            font-size: 2rem;
+            font-weight: 900;
+            line-height: 1.1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .grid-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 24px;
+            transition: all 0.3s ease;
+            height: 555px;
+        }
+        .grid-card:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+        }
+        .policy-item {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 12px;
+            transition: all 0.2s ease;
+        }
+        .policy-item:hover {
+            background: rgba(255,255,255,0.12);
+            transform: translateX(3px);
+        }
+        .icon-wrapper {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 12px;
+            box-shadow: 0 10px 25px rgba(251, 191, 36, 0.3);
+        }
+        .header-section {
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255,255,255,0.25);
+            border-radius: 20px;
+        }
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        .floating-shape {
+            position: absolute;
+            background: rgba(255,255,255,0.04);
+            animation: float 8s ease-in-out infinite;
+        }
+        .shape-1 { width: 120px; height: 60px; border-radius: 30px; top: 20%; left: 5%; animation-delay: 0s; }
+        .shape-2 { width: 90px; height: 90px; border-radius: 50%; bottom: 15%; right: 8%; animation-delay: 3s; }
+        .shape-3 { width: 100px; height: 50px; border-radius: 25px; top: 60%; left: 85%; animation-delay: 6s; }
+        
+        @keyframes float {
+            0%, 100% { opacity: 0.3; transform: translateY(0px) rotate(0deg); }
+            50% { opacity: 0.6; transform: translateY(-15px) rotate(3deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container text-white relative">
+        <!-- Floating Background Elements -->
+        <div class="floating-elements">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="relative z-10 h-full flex flex-col px-8 py-4">
+            <!-- Header Section -->
+            <div class="header-section px-6 py-3 mb-4">
+                <div class="text-center">
+                    <span class="text-sm font-medium text-yellow-300 mb-1 block">공약 7</span>
+                    <h1 class="main-title mb-2">
+                        <span class="text-yellow-300">노동이 존중</span>받고 모든 사람의 <span class="text-yellow-300">권리가 보장</span>되는 사회
+                    </h1>
+                    <p class="text-sm opacity-90">
+                        노동 존중, 일하는 사람들의 <span class="text-yellow-300 font-bold">권리 존중 사회</span> 실현
+                    </p>
+                </div>
+            </div>
+
+            <!-- 4-Grid Layout -->
+            <div class="flex-1 grid grid-cols-4 gap-4">
+                <!-- Card 1: 노동권 보장 -->
+                <div class="grid-card p-4">
+                    <div class="text-center mb-3">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-fist-raised text-xl text-blue-900"></i>
+                        </div>
+                        <h2 class="text-lg font-bold text-yellow-300 mb-1">노동권 보장</h2>
+                        <p class="text-xs opacity-80">일하는 모든 사람의 권리</p>
+                    </div>
+
+                    <div class="space-y-2">
+                        <div class="policy-item p-2">
+                            <h3 class="font-bold text-xs text-yellow-300 mb-1">권리 보장 확대</h3>
+                            <ul class="text-xs space-y-0.5 opacity-90">
+                                <li>• 자영업자·특수고용 권리</li>
+                                <li>• 플랫폼 노동자 보호</li>
+                                <li>• 미조직 취약계층 대변</li>
+                            </ul>
+                        </div>
+
+                        <div class="policy-item p-2">
+                            <h3 class="font-bold text-xs text-yellow-300 mb-1">교섭권 강화</h3>
+                            <ul class="text-xs space-y-0.5 opacity-90">
+                                <li>• 노동조합법 2·3조 개정</li>
+                                <li>• 하청노동자 교섭권</li>
+                                <li>• 산업·업종별 단체교섭</li>
+                            </ul>
+                        </div>
+
+                        <div class="policy-item p-2">
+                            <h3 class="font-bold text-xs text-yellow-300 mb-1">임금제도 개선</h3>
+                            <ul class="text-xs space-y-0.5 opacity-90">
+                                <li>• 포괄임금제 금지</li>
+                                <li>• 동일노동 동일임금</li>
+                                <li>• 임금분포제 도입</li>
+                            </ul>
+                        </div>
+
+                        <div class="policy-item p-2">
+                            <h3 class="font-bold text-xs text-yellow-300 mb-1">직장 민주주의</h3>
+                            <ul class="text-xs space-y-0.5 opacity-90">
+                                <li>• 근로자 대표 제도화</li>
+                                <li>• 노사 자율 강화</li>
+                                <li>• 법적 보호 확대</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: 노동 안전·건강 -->
+                <div class="grid-card p-4">
+                    <div class="text-center mb-3">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-hard-hat text-xl text-blue-900"></i>
+                        </div>
+                        <h2 class="text-lg font-bold text-yellow-300 mb-1">안전·건강</h2>
+                        <p class="text-xs opacity-80">안전한 일터 환경 조성</p>
+                    </div>
+
+                    <div class="space-y-2">
+                        <div class="policy-item p-2">
+                            <h3 class="font-bold text-xs text-yellow-300 mb-1">산재보험 확대</h3>
+                            <ul class="text-xs space-y-0.5 opacity-90">
+                                <li>• 자영업자 산재보험</li>
+                                <li>• 업무상 재해 위험 직종</li>
+                                <li>• 보장범위 확대</li>
+                            </ul>
+                        </div>
+
+                        <div class="policy-item p-2">
+                            <h3 class="font-bold text-xs text-yellow-300 mb-1">안전보건 체계</h3>
+                            <ul class="text-xs space-y-0.5 opacity-90">
+                                <li>• 원·하청 통합관리</li>
+                                <li>• 하청노동자 보호</li>
+                                <li>• 안전사고 예방</li>
+                            </ul>
+                        </div>
+
+                        <div class="policy-item p-2">
+                            <h3 class="font-bold text-xs text-yellow-300 mb-1">노동시간 감축</h3>
+                            <ul class="text-xs space-y-0.5 opacity-90">
+                                <li>• 주 4.5일제 도입</li>
+                                <li>• 2030년 OECD 평균</li>
+                                <li>• 실노동시간 단축</li>
+                            </ul>
+                        </div>
+
+                        <div class="policy-item p-2">
+                            <h3 class="font-bold text-xs text-yellow-300 mb-1">건강권 보장</h3>
+                            <ul class="text-xs space-y-0.5 opacity-90">
+                                <li>• 일하다 다치지 않게</li>
+                                <li>• 건강한 일터 환경</li>
+                                <li>• 예방중심 정책</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: 평등·다양성 -->
+                <div class="grid-card p-4">
+                    <div class="text-center mb-3">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-users text-xl text-blue-900"></i>
+                        </div>
+                        <h2 class="text-lg font-bold text-yellow-300 mb-1">평등·다양성</h2>
+                        <p class="text-xs opacity-80">모든 노동자의 권리 실현</p>
+                    </div>
+
+                    <div class="space-y-2">
+                        <div class="policy-item p-2">
+                            <h3 class="font-bold text-xs text-yellow-300 mb-1">여성 일자리</h3>
+                            <ul class="text-xs space-y-0.5 opacity-90">
+                                <li>• 고용평등 임금공시제</li>
+                                <li>• 성별 평등지표 반영</li>
+                                <li>• 일하기 좋은 환경</li>
+                            </ul>
+                        </div>
+
+                        <div class="policy-item p-2">
+                            <h3 class="font-bold text-xs text-yellow-300 mb-1">장애인 참여</h3>
+                            <ul class="text-xs space-y-0.5 opacity-90">
+                                <li>• 장애인 권리보장법</li>
+                                <li>• 교통약자 이동권</li>
+                                <li>• 사회참여 실현</li>
+                            </ul>
+                        </div>
+
+                        <div class="policy-item p-2">
+                            <h3 class="font-bold text-xs text-yellow-300 mb-1">문화예술인</h3>
+                            <ul class="text-xs space-y-0.5 opacity-90">
+                                <li>• 창작권 보장</li>
+                                <li>• 권리 강화</li>
+                                <li>• 창작권 침해 금지</li>
+                            </ul>
+                        </div>
+
+                        <div class="policy-item p-2">
+                            <h3 class="font-bold text-xs text-yellow-300 mb-1">다양성 존중</h3>
+                            <ul class="text-xs space-y-0.5 opacity-90">
+                                <li>• 차별금지 강화</li>
+                                <li>• 포용적 일터</li>
+                                <li>• 다양성 가치 실현</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: 처우개선·제도개혁 -->
+                <div class="grid-card p-4">
+                    <div class="text-center mb-3">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-gavel text-xl text-blue-900"></i>
+                        </div>
+                        <h2 class="text-lg font-bold text-yellow-300 mb-1">처우개선</h2>
+                        <p class="text-xs opacity-80">공정한 노동환경 구축</p>
+                    </div>
+
+                    <div class="space-y-2">
+                        <div class="policy-item p-2">
+                            <h3 class="font-bold text-xs text-yellow-300 mb-1">공무원 처우</h3>
+                            <ul class="text-xs space-y-0.5 opacity-90">
+                                <li>• 저연차 공무원 보수인상</li>
+                                <li>• 위험근무 수당 인상</li>
+                                <li>• 공직문화 개선</li>
+                            </ul>
+                        </div>
+
+                        <div class="policy-item p-2">
+                            <h3 class="font-bold text-xs text-yellow-300 mb-1">모범사용자</h3>
+                            <ul class="text-xs space-y-0.5 opacity-90">
+                                <li>• 공공부문 선도</li>
+                                <li>• 노동관계법 준수</li>
+                                <li>• 모범적 노사관계</li>
+                            </ul>
+                        </div>
+
+                        <div class="policy-item p-2">
+                            <h3 class="font-bold text-xs text-yellow-300 mb-1">제도 개선</h3>
+                            <ul class="text-xs space-y-0.5 opacity-90">
+                                <li>• 근로기준법 강화</li>
+                                <li>• 공정한 노동환경</li>
+                                <li>• 법제도 개선</li>
+                            </ul>
+                        </div>
+
+                        <div class="policy-item p-2">
+                            <h3 class="font-bold text-xs text-yellow-300 mb-1">상생협력</h3>
+                            <ul class="text-xs space-y-0.5 opacity-90">
+                                <li>• 노사정 대화</li>
+                                <li>• 상생의 노동문화</li>
+                                <li>• 지속가능한 발전</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Summary -->
+            <div class="text-center mt-3 pt-2 border-t border-yellow-300 border-opacity-30">
+                <div class="flex items-center justify-center space-x-6">
+                    <div class="text-center">
+                        <div class="text-sm font-bold text-yellow-300">노동존중</div>
+                        <div class="text-xs opacity-90">모든 일하는 사람의 권리</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-sm font-bold text-yellow-300">안전보장</div>
+                        <div class="text-xs opacity-90">안전하고 건강한 일터</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-sm font-bold text-yellow-300">평등실현</div>
+                        <div class="text-xs opacity-90">차별 없는 노동환경</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-sm font-bold text-yellow-300">상생협력</div>
+                        <div class="text-xs opacity-90">공정한 노사관계</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

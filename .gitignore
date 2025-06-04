@@ -1,0 +1,13 @@
+# IDE specific files
+.idea/
+.claude/
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*~

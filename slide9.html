@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생활 안정으로 아동·청년·어르신 등 모두가 잘사는 나라 건설</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3b82f6 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .main-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .timeline-container {
+            position: relative;
+            width: 100%;
+            padding: 40px 0;
+        }
+        .timeline-line {
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            right: 10%;
+            height: 4px;
+            background: linear-gradient(90deg, #fbbf24, #f59e0b, #d97706, #f59e0b, #fbbf24);
+            border-radius: 2px;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+        .timeline-stage {
+            position: relative;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+        .timeline-stage:hover {
+            transform: translateY(-8px);
+        }
+        .stage-circle {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            box-shadow: 0 15px 30px rgba(251, 191, 36, 0.4);
+            border: 4px solid rgba(255,255,255,0.9);
+            position: relative;
+        }
+        .stage-circle::before {
+            content: '';
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(251,191,36,0.2) 0%, transparent 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            animation: pulse 3s ease-in-out infinite;
+        }
+        .policy-card {
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255,255,255,0.25);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            min-height: 180px;
+        }
+        .policy-card:hover {
+            background: rgba(255,255,255,0.18);
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        .benefit-item {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+        .benefit-item:hover {
+            background: rgba(255,255,255,0.12);
+            transform: translateX(2px);
+        }
+        .universal-support {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(12px);
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 20px;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 0.7; transform: translate(-50%, -50%) scale(1); }
+            50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+        }
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        .floating-shape {
+            position: absolute;
+            background: rgba(255,255,255,0.03);
+            animation: drift 10s ease-in-out infinite;
+        }
+        .shape-1 { width: 80px; height: 40px; border-radius: 20px; top: 15%; left: 8%; animation-delay: 0s; }
+        .shape-2 { width: 60px; height: 60px; border-radius: 50%; bottom: 20%; right: 12%; animation-delay: 4s; }
+        .shape-3 { width: 90px; height: 45px; border-radius: 22px; top: 70%; left: 90%; animation-delay: 7s; }
+        
+        @keyframes drift {
+            0%, 100% { opacity: 0.4; transform: translateY(0px) rotate(0deg); }
+            50% { opacity: 0.7; transform: translateY(-10px) rotate(2deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container text-white relative">
+        <!-- Floating Background Elements -->
+        <div class="floating-elements">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+        </div>
+
+        <!-- Header Section -->
+        <div class="relative z-10 text-center pt-6 pb-4">
+            <span class="text-lg font-medium text-yellow-300 mb-2 block">공약 8</span>
+            <h1 class="main-title mb-3">
+                <span class="text-yellow-300">생활 안정</span>으로 아동·청년·어르신 등 <span class="text-yellow-300">모두가 잘사는</span> 나라
+            </h1>
+            <p class="text-lg opacity-90">
+                전 생애주기 <span class="text-yellow-300 font-bold">소득보장</span>과 <span class="text-yellow-300 font-bold">돌봄체계</span> 구축
+            </p>
+        </div>
+
+        <!-- Timeline Section -->
+        <div class="timeline-container relative px-8">
+            <!-- Timeline Line -->
+            <div class="timeline-line"></div>
+
+            <!-- Timeline Stages -->
+            <div class="grid grid-cols-5 gap-4 relative">
+                <!-- 아동기 (0-17세) -->
+                <div class="timeline-stage text-center">
+                    <div class="stage-circle">
+                        <i class="fas fa-baby text-2xl text-blue-900 mb-1"></i>
+                        <div class="text-xs font-bold text-blue-900">아동기</div>
+                    </div>
+                    <div class="policy-card p-4">
+                        <h3 class="font-bold text-sm text-yellow-300 mb-3">0-17세</h3>
+                        <div class="space-y-2">
+                            <div class="benefit-item p-2">
+                                <div class="text-xs font-medium text-yellow-300">아동수당 확대</div>
+                                <div class="text-xs opacity-90">18세까지 지급</div>
+                            </div>
+                            <div class="benefit-item p-2">
+                                <div class="text-xs font-medium text-yellow-300">영유아 지원</div>
+                                <div class="text-xs opacity-90">교육·보육비 확대</div>
+                            </div>
+                            <div class="benefit-item p-2">
+                                <div class="text-xs font-medium text-yellow-300">초등돌봄</div>
+                                <div class="text-xs opacity-90">온동네 돌봄체계</div>
+                            </div>
+                            <div class="benefit-item p-2">
+                                <div class="text-xs font-medium text-yellow-300">사교육비 절감</div>
+                                <div class="text-xs opacity-90">기초학력 지원</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 청년기 (18-34세) -->
+                <div class="timeline-stage text-center">
+                    <div class="stage-circle">
+                        <i class="fas fa-graduation-cap text-2xl text-blue-900 mb-1"></i>
+                        <div class="text-xs font-bold text-blue-900">청년기</div>
+                    </div>
+                    <div class="policy-card p-4">
+                        <h3 class="font-bold text-sm text-yellow-300 mb-3">18-34세</h3>
+                        <div class="space-y-2">
+                            <div class="benefit-item p-2">
+                                <div class="text-xs font-medium text-yellow-300">등록금 부담완화</div>
+                                <div class="text-xs opacity-90">대학생 지원 확대</div>
+                            </div>
+                            <div class="benefit-item p-2">
+                                <div class="text-xs font-medium text-yellow-300">청년 미래적금</div>
+                                <div class="text-xs opacity-90">자산형성 지원</div>
+                            </div>
+                            <div class="benefit-item p-2">
+                                <div class="text-xs font-medium text-yellow-300">주거환경 개선</div>
+                                <div class="text-xs opacity-90">청년 주거지원</div>
+                            </div>
+                            <div class="benefit-item p-2">
+                                <div class="text-xs font-medium text-yellow-300">구직활동 지원</div>
+                                <div class="text-xs opacity-90">취업지원 확대</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 성인기 (35-49세) -->
+                <div class="timeline-stage text-center">
+                    <div class="stage-circle">
+                        <i class="fas fa-users text-2xl text-blue-900 mb-1"></i>
+                        <div class="text-xs font-bold text-blue-900">성인기</div>
+                    </div>
+                    <div class="policy-card p-4">
+                        <h3 class="font-bold text-sm text-yellow-300 mb-3">35-49세</h3>
+                        <div class="space-y-2">
+                            <div class="benefit-item p-2">
+                                <div class="text-xs font-medium text-yellow-300">육아휴직 확대</div>
+                                <div class="text-xs opacity-90">모든 취업자 적용</div>
+                            </div>
+                            <div class="benefit-item p-2">
+                                <div class="text-xs font-medium text-yellow-300">근로장려금</div>
+                                <div class="text-xs opacity-90">EITC 확대</div>
+                            </div>
+                            <div class="benefit-item p-2">
+                                <div class="text-xs font-medium text-yellow-300">자녀장려금</div>
+                                <div class="text-xs opacity-90">CTC 확대</div>
+                            </div>
+                            <div class="benefit-item p-2">
+                                <div class="text-xs font-medium text-yellow-300">주거비 절감</div>
+                                <div class="text-xs opacity-90">월세 세액공제</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 중장년기 (50-64세) -->
+                <div class="timeline-stage text-center">
+                    <div class="stage-circle">
+                        <i class="fas fa-briefcase text-2xl text-blue-900 mb-1"></i>
+                        <div class="text-xs font-bold text-blue-900">중장년기</div>
+                    </div>
+                    <div class="policy-card p-4">
+                        <h3 class="font-bold text-sm text-yellow-300 mb-3">50-64세</h3>
+                        <div class="space-y-2">
+                            <div class="benefit-item p-2">
+                                <div class="text-xs font-medium text-yellow-300">재취업 지원</div>
+                                <div class="text-xs opacity-90">경력개발 프로그램</div>
+                            </div>
+                            <div class="benefit-item p-2">
+                                <div class="text-xs font-medium text-yellow-300">간병비 완화</div>
+                                <div class="text-xs opacity-90">간호·간병 통합</div>
+                            </div>
+                            <div class="benefit-item p-2">
+                                <div class="text-xs font-medium text-yellow-300">국민연금 개혁</div>
+                                <div class="text-xs opacity-90">사각지대 해소</div>
+                            </div>
+                            <div class="benefit-item p-2">
+                                <div class="text-xs font-medium text-yellow-300">건강관리</div>
+                                <div class="text-xs opacity-90">예방중심 의료</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 노년기 (65세+) -->
+                <div class="timeline-stage text-center">
+                    <div class="stage-circle">
+                        <i class="fas fa-heart text-2xl text-blue-900 mb-1"></i>
+                        <div class="text-xs font-bold text-blue-900">노년기</div>
+                    </div>
+                    <div class="policy-card p-4">
+                        <h3 class="font-bold text-sm text-yellow-300 mb-3">65세+</h3>
+                        <div class="space-y-2">
+                            <div class="benefit-item p-2">
+                                <div class="text-xs font-medium text-yellow-300">공공신탁 제도</div>
+                                <div class="text-xs opacity-90">재산관리 지원</div>
+                            </div>
+                            <div class="benefit-item p-2">
+                                <div class="text-xs font-medium text-yellow-300">고령친화 주택</div>
+                                <div class="text-xs opacity-90">은퇴자 도시</div>
+                            </div>
+                            <div class="benefit-item p-2">
+                                <div class="text-xs font-medium text-yellow-300">통합돌봄</div>
+                                <div class="text-xs opacity-90">지역사회 중심</div>
+                            </div>
+                            <div class="benefit-item p-2">
+                                <div class="text-xs font-medium text-yellow-300">정년 연장</div>
+                                <div class="text-xs opacity-90">노후소득 보장</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Universal Support Section -->
+        <div class="relative z-10 px-8 pb-6">
+            <div class="universal-support p-6">
+                <h2 class="text-xl font-bold text-yellow-300 text-center mb-4">전 연령 공통 지원</h2>
+                <div class="grid grid-cols-6 gap-4">
+                    <div class="text-center">
+                        <i class="fas fa-bus text-lg text-yellow-300 mb-2"></i>
+                        <div class="text-xs font-medium">교통비 절감</div>
+                        <div class="text-xs opacity-80">패스 3종</div>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-palette text-lg text-yellow-300 mb-2"></i>
+                        <div class="text-xs font-medium">문화향유권</div>
+                        <div class="text-xs opacity-80">문화패스 확대</div>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-utensils text-lg text-yellow-300 mb-2"></i>
+                        <div class="text-xs font-medium">먹거리 돌봄</div>
+                        <div class="text-xs opacity-80">천원의 아침밥</div>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-home text-lg text-yellow-300 mb-2"></i>
+                        <div class="text-xs font-medium">1인가구 지원</div>
+                        <div class="text-xs opacity-80">주거복합 플랫폼</div>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-medal text-lg text-yellow-300 mb-2"></i>
+                        <div class="text-xs font-medium">국가유공자</div>
+                        <div class="text-xs opacity-80">예우 강화</div>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-paw text-lg text-yellow-300 mb-2"></i>
+                        <div class="text-xs font-medium">동물복지</div>
+                        <div class="text-xs opacity-80">양육비 지원</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Summary -->
+        <div class="relative z-10 text-center pb-4">
+            <div class="flex items-center justify-center space-x-12">
+                <div class="text-center">
+                    <div class="text-lg font-bold text-yellow-300">생애주기별</div>
+                    <div class="text-xs opacity-90">맞춤형 소득보장</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-lg font-bold text-yellow-300">돌봄기본사회</div>
+                    <div class="text-xs opacity-90">온사회 돌봄체계</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-lg font-bold text-yellow-300">생활비 절감</div>
+                    <div class="text-xs opacity-90">필수생활비 부담완화</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

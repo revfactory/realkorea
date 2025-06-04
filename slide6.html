@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>국민의 생명과 안전을 지키는 나라 건설</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3b82f6 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .main-title {
+            font-size: 2.2rem;
+            font-weight: 900;
+            line-height: 1.1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .section-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 24px;
+            transition: all 0.3s ease;
+            height: 450px;
+        }
+        .section-card:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+        }
+        .policy-block {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 12px;
+            transition: all 0.2s ease;
+        }
+        .policy-block:hover {
+            background: rgba(255,255,255,0.12);
+            transform: translateX(5px);
+        }
+        .icon-circle {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 8px;
+            box-shadow: 0 8px 20px rgba(251, 191, 36, 0.3);
+        }
+        .header-banner {
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255,255,255,0.25);
+            border-radius: 20px;
+        }
+        .divider-line {
+            background: linear-gradient(90deg, transparent, rgba(251,191,36,0.6), transparent);
+            height: 1px;
+        }
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        .floating-shape {
+            position: absolute;
+            background: rgba(255,255,255,0.04);
+            animation: pulse 10s ease-in-out infinite;
+        }
+        .shape-1 { width: 120px; height: 60px; border-radius: 30px; top: 15%; left: 5%; animation-delay: 0s; }
+        .shape-2 { width: 100px; height: 100px; border-radius: 50%; bottom: 10%; right: 8%; animation-delay: 5s; }
+        .shape-3 { width: 80px; height: 40px; border-radius: 20px; top: 70%; left: 45%; animation-delay: 2s; }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container text-white relative">
+        <!-- Floating Background Elements -->
+        <div class="floating-elements">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="relative z-10 h-full flex flex-col px-10 py-4">
+            <!-- Header Section -->
+            <div class="header-banner px-4 py-2 mb-4">
+                <div class="text-center">
+                    <span class="text-base font-medium text-yellow-300 mb-1 block">공약 5</span>
+                    <h1 class="main-title mb-2">
+                        국민의 <span class="text-yellow-300">생명과 안전</span>을 지키는 나라 건설
+                    </h1>
+                    <p class="text-base opacity-90">
+                        안전사회 구축과 <span class="text-yellow-300 font-bold">의료 대란 해결</span> 및 의료 개혁 추진
+                    </p>
+                </div>
+            </div>
+
+            <!-- Main Content - Left Right Layout -->
+            <div class="flex-1 grid grid-cols-2 gap-6">
+                <!-- Left Section: 안전사회 구축 -->
+                <div class="section-card p-4 flex flex-col">
+                    <div class="text-center mb-3">
+                        <div class="icon-circle">
+                            <i class="fas fa-shield-alt text-lg text-blue-900"></i>
+                        </div>
+                        <h2 class="text-lg font-bold text-yellow-300 mb-1">안전사회 구축</h2>
+                        <p class="text-xs opacity-80">범죄예방과 재난대응 강화</p>
+                    </div>
+
+                    <div class="space-y-2 flex-1">
+                        <!-- 범죄 안전 -->
+                        <div class="policy-block p-2">
+                            <div class="flex items-center mb-1">
+                                <i class="fas fa-user-shield text-yellow-300 mr-2 text-sm"></i>
+                                <h3 class="font-bold text-sm text-yellow-300">범죄로부터 안전한 사회</h3>
+                            </div>
+                            <ul class="text-xs space-y-0.5 opacity-90 pl-4">
+                                <li>• 흉악범죄·묻지마 범죄 예방 강화</li>
+                                <li>• 교제폭력 범죄 처벌 강화</li>
+                                <li>• 청소년 범죄 대응체계 강화</li>
+                            </ul>
+                        </div>
+
+                        <!-- 재난대응 -->
+                        <div class="policy-block p-2">
+                            <div class="flex items-center mb-1">
+                                <i class="fas fa-fire-extinguisher text-yellow-300 mr-2 text-sm"></i>
+                                <h3 class="font-bold text-sm text-yellow-300">재난 대응체계 구축</h3>
+                            </div>
+                            <ul class="text-xs space-y-0.5 opacity-90 pl-4">
+                                <li>• 재난현장 지휘권 강화</li>
+                                <li>• 사고조사위원회 즉시 설치</li>
+                                <li>• 통합 기후재난 예측시스템</li>
+                            </ul>
+                        </div>
+
+                        <!-- 생활안전 -->
+                        <div class="policy-block p-2">
+                            <div class="flex items-center mb-1">
+                                <i class="fas fa-car text-yellow-300 mr-2 text-sm"></i>
+                                <h3 class="font-bold text-sm text-yellow-300">생활안전 체계 강화</h3>
+                            </div>
+                            <ul class="text-xs space-y-0.5 opacity-90 pl-4">
+                                <li>• 보행자 안전 우선 교통체계</li>
+                                <li>• 전기차 배터리 인증제</li>
+                                <li>• 고령운전자 안전대책</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Section: 의료개혁 -->
+                <div class="section-card p-4 flex flex-col">
+                    <div class="text-center mb-3">
+                        <div class="icon-circle">
+                            <i class="fas fa-heartbeat text-lg text-blue-900"></i>
+                        </div>
+                        <h2 class="text-lg font-bold text-yellow-300 mb-1">의료개혁</h2>
+                        <p class="text-xs opacity-80">의료대란 해결과 의료시스템 강화</p>
+                    </div>
+
+                    <div class="space-y-2 flex-1">
+                        <!-- 의료시스템 강화 -->
+                        <div class="policy-block p-2">
+                            <div class="flex items-center mb-1">
+                                <i class="fas fa-hospital text-yellow-300 mr-2 text-sm"></i>
+                                <h3 class="font-bold text-sm text-yellow-300">의료시스템 강화</h3>
+                            </div>
+                            <ul class="text-xs space-y-0.5 opacity-90 pl-4">
+                                <li>• 지역·필수·공공 의료 강화</li>
+                                <li>• 필수의료 충분한 보상체계</li>
+                                <li>• 지역의사·공공의료 사관학교</li>
+                            </ul>
+                        </div>
+
+                        <!-- 의료개혁 공론화 -->
+                        <div class="policy-block p-2">
+                            <div class="flex items-center mb-1">
+                                <i class="fas fa-users text-yellow-300 mr-2 text-sm"></i>
+                                <h3 class="font-bold text-sm text-yellow-300">국민참여 의료개혁</h3>
+                            </div>
+                            <ul class="text-xs space-y-0.5 opacity-90 pl-4">
+                                <li>• 의료개혁 공론화위원회 구성</li>
+                                <li>• 보건의료 직역간 협력체계</li>
+                                <li>• 건강보험 안정적 국고지원</li>
+                            </ul>
+                        </div>
+
+                        <!-- 의료비 절감 -->
+                        <div class="policy-block p-2">
+                            <div class="flex items-center mb-1">
+                                <i class="fas fa-won-sign text-yellow-300 mr-2 text-sm"></i>
+                                <h3 class="font-bold text-sm text-yellow-300">의료비 절감·예방</h3>
+                            </div>
+                            <ul class="text-xs space-y-0.5 opacity-90 pl-4">
+                                <li>• 대상별·질환별 보장성 확대</li>
+                                <li>• 희귀·난치질환 부담 완화</li>
+                                <li>• 소아비만·당뇨 국가책임</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Summary -->
+            <div class="divider-line mt-2 mb-2"></div>
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-8">
+                    <div class="text-center">
+                        <div class="text-base font-bold text-yellow-300">안전사회</div>
+                        <div class="text-xs opacity-90">범죄예방·재난대응</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-base font-bold text-yellow-300">의료개혁</div>
+                        <div class="text-xs opacity-90">대란해결·시스템강화</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-base font-bold text-yellow-300">국민안전</div>
+                        <div class="text-xs opacity-90">생명과 건강 보호</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
