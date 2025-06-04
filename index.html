@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>슬라이드 네비게이션</title>
+    <title>공약 네비게이션</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <style>
         body {
@@ -186,16 +186,16 @@
             </div>
             
             <div class="nav-center">
-                <button onclick="previousSlide()" id="prevBtn" class="nav-btn" title="이전 슬라이드">
+                <button onclick="previousSlide()" id="prevBtn" class="nav-btn" title="이전 공약">
                     <i class="fas fa-chevron-left"></i>
                 </button>
                 
                 <div class="current-slide" id="currentSlide">
-                    슬라이드 1
-                    <span class="slide-counter">/ 11</span>
+                    0
+                    <span class="slide-counter">/ 10</span>
                 </div>
                 
-                <button onclick="nextSlide()" id="nextBtn" class="nav-btn" title="다음 슬라이드">
+                <button onclick="nextSlide()" id="nextBtn" class="nav-btn" title="다음 공약">
                     <i class="fas fa-chevron-right"></i>
                 </button>
             </div>
@@ -235,7 +235,7 @@
         
         function updateUI() {
             // Update current slide display
-            document.getElementById('currentSlide').innerHTML = `슬라이드 ${currentSlide}<span class="slide-counter">/ ${totalSlides}</span>`;
+            document.getElementById('currentSlide').innerHTML = `${currentSlide-1}<span class="slide-counter">/ ${totalSlides-1}</span>`;
             
             // Update button states
             document.getElementById('prevBtn').disabled = currentSlide === 1;
